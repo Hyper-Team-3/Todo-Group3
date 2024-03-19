@@ -82,7 +82,7 @@ router.get("/:userEmail", async (req, res) => {
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/NewTodo'
+ *             $ref: '#/components/schemas/Todo'
  *     responses:
  *       '200':
  *         description: Successful response
@@ -127,7 +127,7 @@ router.post("/", async (req, res) => {
  *       content:
  *         application/json:
  *           schema:
- *             $ref: '#/components/schemas/NewTodo'
+ *             $ref: '#/components/schemas/Todo'
  *     responses:
  *       '200':
  *         description: Successful response
