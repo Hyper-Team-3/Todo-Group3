@@ -1,0 +1,330 @@
+/* RegisterForm.css */
+
+/* Container */
+
+.register-container {
+  width: 110vh;
+  height: auto;
+  margin-top: 12vh;
+}
+
+.create-account {
+  width: 60%;
+  padding: 3rem;
+}
+
+.join-text {
+  font-size: 1.4rem;
+  margin-bottom: 2rem;
+}
+
+.bg-image {
+  width: 100%;
+  height: auto;
+  background-image: url("../../Assets/register.png");
+  background-size: cover;
+  min-width: 57vh;
+}
+
+/* Row */
+.flex {
+  display: flex;
+}
+
+.justify-center {
+  justify-content: center;
+}
+
+.px-6 {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+.py-12 {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+/* Col */
+.w-full {
+  width: 100%;
+}
+
+.hidden {
+  display: none;
+}
+
+.lg\:block {
+  display: block;
+}
+
+.lg\:w-5\/12 {
+  width: 41.666667%;
+}
+
+.bg-cover {
+  background-size: cover;
+}
+
+.rounded-l-lg {
+  border-top-left-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
+}
+
+/* Col (Second Column) */
+.lg\:w-7\/12 {
+  width: 58.333333%;
+}
+
+.bg-white {
+  background-color: #f5f5f5;
+}
+
+.p-5 {
+  padding: 1.25rem;
+}
+
+.lg\:rounded-l-none {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-gray-800 {
+  color: #2d3748;
+}
+
+.dark\:text-white {
+  color: #fff;
+}
+
+/* Form */
+.px-8 {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.pt-6 {
+  padding-top: 1.5rem;
+}
+
+.pb-8 {
+  padding-bottom: 2rem;
+}
+
+.mb-4 {
+  margin-bottom: 1rem;
+}
+
+.md\:flex {
+  display: flex;
+}
+
+.md\:justify-between {
+  justify-content: space-between;
+}
+
+.block {
+  display: block;
+}
+
+.mb-2 {
+  margin-bottom: 0.5rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+}
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-gray-700 {
+  color: #4a5568;
+}
+
+.dark\:text-white {
+  color: #fff;
+}
+
+.mb-3 {
+  margin-bottom: 0.75rem;
+}
+
+.border {
+  border-width: 1px;
+}
+
+.focus\:outline-none:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+.focus\:shadow-outline:focus {
+  box-shadow: 0 0 0 3px rgba(66, 153, 225, 0.5);
+}
+
+.mb-6 {
+  margin-bottom: 1.5rem;
+}
+
+/* Button */
+
+.font-bold {
+  font-weight: 700;
+}
+
+.text-white {
+  color: #fff;
+}
+
+.register-button {
+  background-color: #5d3fe1 !important;
+  border-radius: 3rem;
+  width: 10rem;
+  height: 3rem;
+  color: white;
+}
+
+.input-box {
+  margin-top: 0.39rem;
+  margin-bottom: 0.39rem;
+  padding: 0.5rem;
+  display: block;
+  width: 90%;
+  border-width: 0.1rem;
+  border-style: solid;
+  border-color: #ccc;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  outline: none;
+  transition: ring-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+}
+
+.rounded-input {
+  border-radius: 0.5rem;
+}
+
+.dark\:bg-blue-700 {
+  background-color: #342283;
+}
+
+.dark\:text-white {
+  color: #fff;
+}
+
+.dark\:hover\:bg-blue-900:hover {
+  background-color: #2a4365;
+}
+
+/* Link */
+.inline-block {
+  display: inline-block;
+}
+
+.text-blue-500 {
+  color: #4299e1;
+}
+
+.dark\:text-blue-500 {
+  color: #4299e1;
+}
+
+/* registration agreement */
+
+.registration-agreement {
+  border: 1px solid #ccc;
+  padding: 1rem;
+  border-radius: 0.5rem;
+}
+
+.registration-agreement h3 {
+  margin-top: 0;
+}
+
+.registration-agreement-text {
+  width: 100%;
+  height: 150px;
+  resize: vertical;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  transition: border-color 0.15s ease-in-out;
+}
+
+.registration-agreement-text:focus {
+  outline: none;
+  border-color: #4a90e2;
+}
+
+/* media quarry */
+
+@media (max-width: 399px) {
+  .bg-image {
+    display: none;
+  }
+
+  .create-account {
+    width: auto;
+    height: auto;
+  }
+}
+
+/* RegisterForm.css */
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+
+.create-account {
+  max-width: 100vh;
+  min-width: 55vh;
+}
+
+.input-container {
+  margin-bottom: 1rem;
+}
+
+.input-box {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 0.25rem;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+}
+
+.login-button {
+  background-color: #5d3fe1 !important;
+  border-radius: 3rem;
+  width: 10rem;
+  height: 3rem;
+  color: white;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  min-height: 48.5vh;
+}
