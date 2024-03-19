@@ -1,4 +1,3 @@
-import React from "react";
 import "./LoginForm.css";
 
 const LoginForm = () => {
@@ -45,7 +44,7 @@ const LoginForm = () => {
               </div>
             </form>
             <div className="text-sm text-center">
-              <p>Don't have an account yet?</p>
+              <p>Donot have an account yet?</p>
               <a href="#" className="text-blue-500">
                 Register here
               </a>

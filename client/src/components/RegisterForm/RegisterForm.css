@@ -21,7 +21,7 @@
 .bg-image {
   width: 100%;
   height: auto;
-  background-image: url("../../Assets/register.png");
+  background-image: url("../../assets/register.png");
   background-size: cover;
   min-width: 57vh;
 }
