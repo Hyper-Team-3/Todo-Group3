@@ -1,5 +1,5 @@
 const TodoBoard = () => {
-  return <div></div>;
+  return <div>TodoBoard</div>;
 };
 
 export default TodoBoard;
