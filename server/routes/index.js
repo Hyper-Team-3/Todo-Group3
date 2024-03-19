@@ -8,6 +8,4 @@ router.use("/todos", taskApi)
 router.use("/login", loginApi)
 router.use("/signup", signUpApi)
 
-
-
 module.exports = router
