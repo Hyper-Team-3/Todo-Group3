@@ -7,7 +7,6 @@ const LoginForm = () => {
         <div className="bg-image"></div>
         <div className="login-form flex items-center justify-center w-full text-left mt-24">
           <div className="login-form-container">
-            <h2 className="text-2xl font-semibold mb-2">Welcome Back</h2>
             <form>
               <div className="mb-4">
                 <label
@@ -44,7 +43,7 @@ const LoginForm = () => {
               </div>
             </form>
             <div className="text-sm text-center">
-              <p>Donot have an account yet?</p>
+              <p>Don´t have an account yet?</p>
               <a href="#" className="text-blue-500">
                 Register here
               </a>

@@ -10,13 +10,17 @@ const RegisterForm = () => {
 
   return (
     <div className="register-container">
-      <div className="bg-white p-8 shadow-lg flex">
-        <div className="bg-image"></div>
-        <div className="create-account flex-col items-center justify-center w-72 text-left mt-24">
-          <h2 className="text-2xl font-semibold mb-2">Welcome</h2>
-          <h2 className="join-text">
-            Join us and start organizing your tasks effectively!
+      <div className=" bg-white p-0 shadow-lg flex rounded-xl">
+        <div className="bg-image "></div>
+        <div className="create-account flex-col items-center justify-center w-72 text-left mt-4">
+          <h2 className="text-2xl font-semibold mb-2">
+            {showLoginForm ? "Hey! Welcome back! (USER)" : "Welcome"}
           </h2>
+          {!showLoginForm && (
+            <h2 className="join-text">
+              Join us and start organizing your tasks effectively!
+            </h2>
+          )}
 
           {!showLoginForm && (
             <form>
@@ -82,7 +86,7 @@ const RegisterForm = () => {
                   I agree to the Terms and Conditions
                 </label>
               </div>
-              <div className="mb-6 text-center">
+              <div className="mb-2 text-center">
                 <button type="submit" className="register-button">
                   Register
                 </button>
@@ -92,9 +96,8 @@ const RegisterForm = () => {
 
           {showLoginForm && (
             <div className="login-form">
-              <h2>Login</h2>
               <form>
-                <div className="mb-4">
+                <div className="mb-9 mt-9">
                   <label htmlFor="loginEmail">Email</label>
                   <input
                     id="loginEmail"
