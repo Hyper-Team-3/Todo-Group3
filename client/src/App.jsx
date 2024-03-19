@@ -1,6 +1,6 @@
 import "./App.css";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
-import TodoBoard from "./pages/TodoBoard";
+import TodoBoard from "./pages/TodoBoardPage";
 import Signup from "./pages/Signup";
 import Login from "./pages/Login";
 
