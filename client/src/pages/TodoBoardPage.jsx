@@ -1,21 +1,18 @@
 import Sidebar from "../components/Sidebar";
 import TodoBoard from "../components/TodoBoard";
+import Header from "../components/Header";
+import Tasks from "../components/Tasks";
+import DoneTasks from "../components/DoneTasks";
+import Footer from "../components/Footer"
 
 const TodoBoardPage = () => {
   return (
-    /*
-    Header
-    Sidebar
-    Todo
-    Done
-    */
-    <div className="grid grid-cols-12 grid-rows-10 gap-2">
-      <div className="row-span-10">
+    <div className="grid grid-cols-13 grid-rows-6 bg-gray-200 overflow-hidden">
         <Sidebar />
-      </div>
-      <div className="col-span-11 row-span-10">
-        <TodoBoard />
-      </div>
+        <Header />
+        <Tasks />
+        <DoneTasks />
+        <Footer />
     </div>
   );
 };

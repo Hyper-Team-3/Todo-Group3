@@ -1,9 +1,9 @@
 .header {
-    @apply flex flex-row justify-between p-5 ml-1 mr-1  bg-gray-300 rounded-xl shadow-lg
+    @apply col-span-12 flex justify-between p-5 m-16 bg-white rounded-xl shadow-lg
 }
 
 .title {
-    @apply text-2xl font-bold
+    @apply text-3xl font-semibold text-gray-800
 }
 
 .profilewrapper {
@@ -14,9 +14,9 @@
 Temp for random profile picture
 */
 .circle {
-    @apply h-10 w-10 bg-black rounded-full
+    @apply h-10 w-10 bg-gray-800 rounded-full
 }
 
 .name {
-    @apply text-xl font-semibold
+    @apply text-3xl font-semibold text-gray-800
 }
