@@ -1,0 +1,4 @@
+.footer {
+    @apply col-span-12 flex justify-center items-center p-5 m-16 bg-white rounded-xl shadow-lg italic text-gray-800
+}
+
