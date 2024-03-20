@@ -1,21 +1,15 @@
 .aside {
-    @apply fixed top-0 left-0 w-24 h-screen bg-indigo-700 py-12 flex flex-col justify-between content-center
+    @apply row-span-10 h-screen bg-indigo-700 py-20 flex flex-col justify-between items-center
 }
 
 .logo {
-    @apply text-3xl font-semibold font-poppins text-white
+    @apply text-4xl font-semibold font-poppins text-white
 }
 
 .label {
-    @apply flex items-center cursor-pointer select-none text-black
+    @apply flex justify-center cursor-pointer select-none text-black
 }
 
 .switch {
-    @apply block h-8 rounded-full bg-white w-14
+    @apply block h-10 rounded-full bg-white w-20
 }
-
-/*
-.toggle {
-    @apply absolute w-6 h-6 transition bg-indigo-700 rounded-full  left-1 top-1 checked:translate-x-full
-}
-*/
