@@ -1,5 +1,7 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import "./RegisterForm.css";
+import { CiMail } from 'react-icons/ci';
+import { RiLockPasswordLine } from "react-icons/ri";
 
 const RegisterForm = () => {
   const [showLoginForm, setShowLoginForm] = useState(false);
@@ -10,7 +12,7 @@ const RegisterForm = () => {
 
   return (
     <div className="register-container">
-      <div className=" bg-white p-0 shadow-lg flex rounded-xl">
+      <div className="bg-white p-0 shadow-lg flex rounded-xl">
         <div className="bg-image "></div>
         <div className="create-account flex-col items-center justify-center w-72 text-left mt-4">
           <h2 className="text-2xl font-semibold mb-2">
@@ -73,12 +75,14 @@ const RegisterForm = () => {
                 >
                   Password
                 </label>
-                <input
-                  id="password"
-                  type="password"
-                  className="input-box"
-                  placeholder="Enter your password"
-                />
+                <div className="input-container">
+                  <input
+                    id="password"
+                    type="password"
+                    className="input-box"
+                    placeholder="Enter your password"
+                  />
+                </div>
               </div>
               <div className="mb-4 text-center">
                 <input type="checkbox" id="agreement" className="mr-2" />
@@ -96,24 +100,31 @@ const RegisterForm = () => {
 
           {showLoginForm && (
             <div className="login-form">
-              <form>
-                <div className="mb-9 mt-9">
-                  <label htmlFor="loginEmail">Email</label>
+            <form>
+              <div className="mb-9 mt-9">
+                <label htmlFor="loginEmail" className="input-icon">
+                  Email
+                </label>
+                <div className="input-container">
                   <input
                     id="loginEmail"
                     type="email"
                     className="input-box"
                     placeholder="Enter your email"
                   />
+                  
+                </div>
                 </div>
                 <div className="mb-4">
                   <label htmlFor="loginPassword">Password</label>
+                  
                   <input
                     id="loginPassword"
                     type="password"
                     className="input-box"
-                    placeholder="Enter your password"
+                    placeholder="Enter Your password"
                   />
+                
                 </div>
                 <div className="mb-4 text-center">
                   <button type="submit" className="login-button">
