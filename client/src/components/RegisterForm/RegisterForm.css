@@ -1,14 +1,17 @@
-/* RegisterForm.css */
-
 /* Container */
 
 .register-container {
-  margin-top: 3rem;
+  display: flex;
+  align-items: center; /* Vertically center */
+  justify-content: center; /* Horizontally center */
+  height: 100%;
+  margin-top: 5%;
 }
 
 .create-account {
   width: 60%;
   padding: 2rem;
+  min-width: 40%;
 }
 
 .join-text {
@@ -110,14 +113,30 @@
 
 /* media quarry */
 
-@media (max-width: 399px) {
+@media (max-width: 450px) {
   .bg-image {
     display: none;
   }
 
   .create-account {
-    width: auto;
-    height: auto;
+    display: flex;
+    padding: 2rem;
+    font-size: 1rem;
+    margin-top: 10%;
+    margin-left: 1rem;
+    margin: auto;
+  }
+
+  .join-text {
+    font-size: 1.2rem;
+    margin-left: 2rem;
+    text-align: center;
+  }
+
+  .login-form {
+    display: flex;
+    flex-direction: column;
+    min-height: 20vh;
   }
 }
 
@@ -163,5 +182,5 @@
 .login-form {
   display: flex;
   flex-direction: column;
-  min-height: 63.2vh;
+  min-height: 55.8vh;
 }

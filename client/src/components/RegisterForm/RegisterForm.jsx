@@ -12,7 +12,7 @@ const RegisterForm = () => {
 
   return (
     <div className="register-container">
-      <div className="bg-white p-0 shadow-lg flex rounded-xl">
+      <div className="bg-white p-0 shadow-lg flex rounded-xl mt-40">
         <div className="bg-image "></div>
         <div className="create-account flex-col items-center justify-center w-72 text-left mt-4">
           <h2 className="text-2xl font-semibold mb-2">
