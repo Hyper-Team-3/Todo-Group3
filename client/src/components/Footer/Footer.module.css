@@ -4,5 +4,5 @@
  */
 
 .footer {
-  @apply flex justify-center items-center p-5 w-full border-t border-slate-100 bg-white shadow-lg italic text-gray-800 absolute bottom-0;
+  @apply flex justify-center items-center p-5 border-t border-slate-100 shadow-lg italic text-gray-800 absolute bottom-0;
 }

@@ -1,7 +1,7 @@
 import Header from "../Header";
 import Tasks from "../Tasks";
 import DoneTasks from "../DoneTasks";
-import Footer from "../Footer";
+// import Footer from "../Footer";
 
 import styles from "./TodoBoard.module.css";
 // test it
@@ -15,9 +15,9 @@ const TodoBoard = () => {
         <Tasks />
         <DoneTasks />
       </div>
-      <div className={styles.footer}>
+      {/* <div className={styles.footer}>
         <Footer />
-      </div>
+      </div> */}
     </>
   );
 };

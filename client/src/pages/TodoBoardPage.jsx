@@ -11,14 +11,6 @@ const TodoBoardPage = () => {
         <TodoBoard />
       </div>
     </div>
-
-    // <div className="grid grid-cols-13 grid-rows-6 bg-gray-200 overflow-hidden">
-    //     <Sidebar />
-    //     <Header />
-    //     <Tasks />
-    //     <DoneTasks />
-    //     <Footer />
-    // </div>
   );
 };
 
