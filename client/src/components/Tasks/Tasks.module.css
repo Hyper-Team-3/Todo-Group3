@@ -8,3 +8,7 @@
 * .taskheader {
   @apply flex justify-center items-center h-16 bg-indigo-700 rounded-t-xl font-poppins text-3xl text-white font-semibold;
 }
+
+.task_container {
+  @apply p-[1.5rem];
+}

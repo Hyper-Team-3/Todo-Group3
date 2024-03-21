@@ -1,4 +1,4 @@
-import styles from "./Tasks.module.css"
+import styles from "./Tasks.module.css";
 
 const Tasks = () => {
   /*
@@ -7,9 +7,10 @@ const Tasks = () => {
 
   return (
     <div className={styles.parent}>
-        <div className={styles.taskheader}>Tasks</div>
+      <div className={styles.taskheader}>Tasks</div>
+      <div className={styles.task_container}>Here the task</div>
     </div>
-  )
-}
+  );
+};
 
 export default Tasks;
