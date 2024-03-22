@@ -16,7 +16,6 @@ const DoneTasks = () => {
     >
       <div className={darkMode ? styles.taskheaderDarkM : styles.taskheader}>
         Done
-        <DoneTask />
       </div>
     </div>
   );

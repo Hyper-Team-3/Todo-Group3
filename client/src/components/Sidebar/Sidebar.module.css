@@ -11,7 +11,7 @@
 }
 
 .switch {
-    @apply block h-8 rounded-full bg-white w-16
+    @apply block h-10 rounded-full bg-white w-20
 }
 
 
