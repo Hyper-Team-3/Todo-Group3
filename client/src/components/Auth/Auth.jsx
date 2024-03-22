@@ -16,10 +16,10 @@ const Auth = () => {
       return;
     }
 
-    
+  
     console.log("Form submitted:", { email, password });
 
-    
+  
     setEmail('');
     setPassword('');
     setConfirmPassword('');
@@ -74,7 +74,16 @@ const Auth = () => {
             <button type="submit" className="login-button">{isLogin ? 'Login' : 'Sign Up'}</button>
           </form>
           <div className="auth-options">
-            
+            <button
+              onClick={toggleLoginForm}
+              className="text-blue-500"
+              style={{ backgroundColor: !isLogin ? 'rgb(255,255,255)' : 'rgb(188, 188, 188)' }}
+            >Sign up</button>
+            <button
+              onClick={toggleLoginForm}
+              className="text-blue-500"
+              style={{ backgroundColor: isLogin ? 'rgb(255,255,255)' : 'rgb(188, 188, 188)' }}
+            >Login</button>
           </div>
           <div className="text-sm text-center">
             <p>

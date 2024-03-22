@@ -7,7 +7,7 @@ import Auth from "./components/Auth/Auth";
 function App() {
   const router = createBrowserRouter([
     { path: "/", element: <TodoBoard /> },
-    { path: "/signup", element: <Auth /> },
+    { path: "/", element: <Auth /> },
  
   ]);
   return (
