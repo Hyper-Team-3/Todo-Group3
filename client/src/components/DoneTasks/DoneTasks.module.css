@@ -5,3 +5,11 @@
 .taskheader {
     @apply flex justify-center items-center h-16 bg-indigo-700 rounded-t-xl font-poppins text-3xl text-white font-semibold
 }
+
+.parentDarkM {
+    @apply col-start-8 col-span-6 row-span-4 bg-gray-500 rounded-xl shadow-lg ml-8 mr-16
+}
+
+.taskheaderDarkM {
+    @apply flex justify-center items-center h-16 bg-indigo-700 rounded-t-xl font-poppins text-3xl text-black font-semibold
+}

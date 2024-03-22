@@ -1,7 +1,5 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./RegisterForm.css";
-import { CiMail } from 'react-icons/ci';
-import { RiLockPasswordLine } from "react-icons/ri";
 
 const RegisterForm = () => {
   const [showLoginForm, setShowLoginForm] = useState(false);
@@ -100,31 +98,29 @@ const RegisterForm = () => {
 
           {showLoginForm && (
             <div className="login-form">
-            <form>
-              <div className="mb-9 mt-9">
-                <label htmlFor="loginEmail" className="input-icon">
-                  Email
-                </label>
-                <div className="input-container">
-                  <input
-                    id="loginEmail"
-                    type="email"
-                    className="input-box"
-                    placeholder="Enter your email"
-                  />
-                  
-                </div>
+              <form>
+                <div className="mb-9 mt-9">
+                  <label htmlFor="loginEmail" className="input-icon">
+                    Email
+                  </label>
+                  <div className="input-container">
+                    <input
+                      id="loginEmail"
+                      type="email"
+                      className="input-box"
+                      placeholder="Enter your email"
+                    />
+                  </div>
                 </div>
                 <div className="mb-4">
                   <label htmlFor="loginPassword">Password</label>
-                  
+
                   <input
                     id="loginPassword"
                     type="password"
                     className="input-box"
                     placeholder="Enter Your password"
                   />
-                
                 </div>
                 <div className="mb-4 text-center">
                   <button type="submit" className="login-button">

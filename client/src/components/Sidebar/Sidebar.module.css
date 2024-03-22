@@ -13,3 +13,14 @@
 .switch {
     @apply block h-10 rounded-full bg-white w-20
 }
+
+
+.logoDarkM {
+    @apply text-4xl font-semibold font-poppins text-black
+}
+
+.label {}
+
+.switchDarkM {
+    @apply block h-10 rounded-full bg-black w-20
+}
