@@ -1,8 +1,11 @@
 import { useState, createContext } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import TodoBoard from "./pages/TodoBoardPage";
-import Signup from "./pages/Signup";
-import Login from "./pages/Login"; //
+import Auth from "./components/Auth";
+// import Signup from "./pages/Signup";
+// import Login from "./pages/Login";
+
+export const ThemeContext = createContext();
 
 function App() {
   const router = createBrowserRouter([
@@ -18,7 +21,9 @@ function App() {
 
   return (
     <>
-      <RouterProvider router={router} />
+      <ThemeContext.Provider value={{ darkMode, toggleMode }}>
+        <RouterProvider router={router} />
+      </ThemeContext.Provider>{" "}
     </>
   );
 }

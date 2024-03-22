@@ -5,14 +5,14 @@ import { ThemeContext } from "../../App";
 
 const Tasks = () => {
   const { darkMode } = useContext(ThemeContext);
-  const [title, setTitle] = useState("Task title");
-  const [date, setDate] = useState("8 Mar");
+  // const [title, setTitle] = useState("Task title");
+  // const [date, setDate] = useState("8 Mar");
   /*
   Map the json of tasks
   */
-  useEffect(() => {
-    /* import tasks */
-  });
+  // useEffect(() => {
+  /* import tasks */
+  // });
 
   return (
     <div className={darkMode ? styles.parentDarkM : styles.parent}>
