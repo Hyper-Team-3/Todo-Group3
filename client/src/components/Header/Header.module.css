@@ -1,9 +1,9 @@
 .header {
-    @apply col-span-12 flex justify-between p-5 m-16 bg-white rounded-xl shadow-lg
+    @apply col-span-12 flex justify-between p-5 m-8 bg-white rounded-xl shadow-lg
 }
 
 .title {
-    @apply text-3xl font-semibold text-gray-800
+    @apply text-2xl font-semibold text-gray-800
 }
 
 .profilewrapper {
@@ -30,5 +30,5 @@ Temp for random profile picture
 }
 
 .nameDarkM {
-    @apply text-3xl font-semibold text-black
+    @apply text-2xl font-semibold text-gray-800
 }

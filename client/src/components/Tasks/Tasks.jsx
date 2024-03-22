@@ -1,5 +1,5 @@
-import { useContext } from "react";
 import styles from "./Tasks.module.css";
+import { useContext } from "react";
 import { ThemeContext } from "../../App";
 
 const Tasks = () => {
@@ -10,9 +10,9 @@ const Tasks = () => {
 
   return (
     <div className={darkMode ? styles.parentDarkM : styles.parent}>
-      <div className={darkMode ? styles.taskheaderDarkM : styles.taskheader}>
-        Tasks
-      </div>
+      <div
+        className={darkMode ? styles.taskheaderDarkM : styles.taskheader}
+      ></div>
     </div>
   );
 };
