@@ -7,8 +7,9 @@ const pool = require('../db')
 
 // Login
 
-router.post('/login', async (req, res) => {
+router.post('/', async (req, res) => {
   const { email, password } = req.body
+  console.log(email, password, "req.body")
 
   try {
     const users = await pool.query('SELECT * FROM users WHERE email = $1', [email])

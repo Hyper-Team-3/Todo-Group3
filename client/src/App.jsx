@@ -1,19 +1,33 @@
-import { useState, createContext } from "react";
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { useState, createContext, useEffect } from "react";
+import { useCookies } from "react-cookie";
 import TodoBoard from "./pages/TodoBoardPage";
 import Auth from "./components/Auth";
-// import Signup from "./pages/Signup";
-// import Login from "./pages/Login";
 
 export const ThemeContext = createContext();
 
 function App() {
-  const router = createBrowserRouter([
-    { path: "/", element: <TodoBoard /> },
-    { path: "/signup", element: <Auth /> },
-  ]);
-
   const [darkMode, setDarkMode] = useState(false);
+  const [tasks, setTasks] = useState(null)
+  const [cookies, setCookie, removeCookie] = useCookies(null)
+  const userEmail = cookies.Email
+  const authToken = cookies.AuthToken
+
+  async function getData(){
+    try {
+      const response = await fetch(`${import.meta.env.VITE_SERVERURL}/todos/${userEmail}`)
+      const json = await response.json()
+      setTasks(json)
+      console.log("GOT DATA")
+    } catch (err) {
+      console.error(err.message)
+    }
+  }
+
+  useEffect(() => {
+    if(authToken){
+      getData()
+    }
+  }, [])
 
   function toggleMode() {
     setDarkMode(!darkMode);
@@ -21,9 +35,11 @@ function App() {
 
   return (
     <>
-      <ThemeContext.Provider value={{ darkMode, toggleMode }}>
-        <RouterProvider router={router} />
-      </ThemeContext.Provider>{" "}
+      <ThemeContext.Provider value={{ darkMode, toggleMode, userEmail, tasks, getData }}>
+      {!authToken && <Auth />}
+      {authToken && <TodoBoard />}
+        
+      </ThemeContext.Provider>
     </>
   );
 }
