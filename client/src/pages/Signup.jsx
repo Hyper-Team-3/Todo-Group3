@@ -1,9 +1,9 @@
-import RegisterForm from "../components/RegisterForm";
+import RegisterForm from "../components/Auth/Auth";
 
 const Signup = () => {
   return (
     <div>
-      <RegisterForm />
+      <Auth />
     </div>
   );
 };

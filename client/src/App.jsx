@@ -2,15 +2,12 @@ import { useState, createContext } from "react";
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import TodoBoard from "./pages/TodoBoardPage";
 import Signup from "./pages/Signup";
-import Login from "./pages/Login";
-
-export const ThemeContext = createContext();
+import Login from "./pages/Login"; //
 
 function App() {
   const router = createBrowserRouter([
     { path: "/", element: <TodoBoard /> },
-    { path: "/signup", element: <Signup /> },
-    { path: "/login", element: <Login /> },
+    { path: "/signup", element: <Auth /> },
   ]);
 
   const [darkMode, setDarkMode] = useState(false);
@@ -21,9 +18,7 @@ function App() {
 
   return (
     <>
-      <ThemeContext.Provider value={{ darkMode, toggleMode }}>
-        <RouterProvider router={router} />
-      </ThemeContext.Provider>
+      <RouterProvider router={router} />
     </>
   );
 }
