@@ -1,7 +1,7 @@
 .parent {
-    @apply col-start-8 col-span-6 row-span-4 bg-white rounded-xl shadow-lg ml-8 mr-16
+    @apply col-start-8 col-span-6 row-span-4 bg-white rounded-xl shadow-lg ml-4 mr-8
 }
 
 .taskheader {
-    @apply flex justify-center items-center h-16 bg-indigo-700 rounded-t-xl font-poppins text-3xl text-white font-semibold
+    @apply flex justify-center items-center h-16 bg-indigo-700 rounded-t-xl font-poppins text-2xl text-white font-semibold
 }

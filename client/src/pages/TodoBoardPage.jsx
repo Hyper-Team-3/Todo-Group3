@@ -7,7 +7,7 @@ import Footer from "../components/Footer"
 
 const TodoBoardPage = () => {
   return (
-    <div className="grid grid-cols-13 grid-rows-6 bg-gray-200 overflow-hidden">
+    <div className="grid grid-cols-13 grid-rows-6 bg-gray-200 overflow-hidden h-screen">
         <Sidebar />
         <Header />
         <Tasks />
