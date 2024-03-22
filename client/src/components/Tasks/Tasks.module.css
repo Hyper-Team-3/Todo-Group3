@@ -1,7 +1,15 @@
 .parent {
-    @apply col-start-2 col-span-6 row-span-4 bg-white rounded-xl shadow-lg ml-8 mr-4
+    @apply col-start-2 col-span-6 row-span-4 bg-white rounded-xl shadow-lg ml-8 mr-4 flex flex-col justify-between
 }
 
-.taskheader {
+.tasksheader {
     @apply flex justify-center items-center h-16 bg-indigo-700 rounded-t-xl font-poppins text-2xl text-white font-semibold
+}
+
+.taskwrapper {
+    @apply h-full border-b-2
+}
+
+.taskfooter {
+    @apply flex justify-center items-center h-16 rounded-b-xl font-poppins text-gray-500 
 }
