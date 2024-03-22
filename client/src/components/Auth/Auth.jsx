@@ -31,10 +31,11 @@ const Auth = () => {
     if (data.detail) {
       setError(data.detail);
     } else {
+      console.log(data,"data successfully");
       setCookie("Email", data.email);
       setCookie("AuthToken", data.token);
 
-      // window.location.reload();
+      window.location.reload();
     }
   }
 
@@ -42,8 +43,6 @@ const Auth = () => {
     setIsLogin(status);
     setError('');
   };
-
-  console.log(isLogin, "isLogin")
 
   return (
     <div className="register-container">

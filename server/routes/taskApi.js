@@ -27,6 +27,8 @@ const pool = require("../db");
  *           type: string
  *         date:
  *           type: string
+ *         completed:
+ *           type: boolean 
  */
 
 // Get all todos
@@ -94,12 +96,12 @@ router.get("/:userEmail", async (req, res) => {
 
 router.post("/", async (req, res) => {
   try {
-    const { user_email, title, progress, date } = req.body;
-    console.log(user_email, title, progress, date);
+    const { user_email, title, progress, date, completed } = req.body;
+    console.log(user_email, title, progress, date, completed);
     const id = uuidv4();
     const newTodo = await pool.query(
-      `INSERT INTO todos(id, user_email, title, progress, date) VALUES($1,$2,$3,$4,$5)`,
-      [id, user_email, title, progress, date]
+      `INSERT INTO todos(id, user_email, title, progress, date, completed) VALUES($1,$2,$3,$4,$5,$6)`,
+      [id, user_email, title, progress, date, completed]
     );
     res.json(newTodo);
   } catch (err) {
@@ -139,11 +141,11 @@ router.post("/", async (req, res) => {
 
 router.put("/:id", async (req, res) => {
   const { id } = req.params;
-  const { user_email, title, progress, date } = req.body;
+  const { user_email, title, progress, date, completed } = req.body;
   try {
     const editTodo = await pool.query(
-      "UPDATE todos SET user_email = $1, title = $2, progress = $3, date = $4 WHERE id = $5;",
-      [user_email, title, progress, date, id]
+      "UPDATE todos SET user_email = $1, title = $2, progress = $3, date = $4, completed = $5 WHERE id = $6;",
+      [user_email, title, progress, date, completed, id]
     );
     res.json(editTodo);
   } catch (err) {

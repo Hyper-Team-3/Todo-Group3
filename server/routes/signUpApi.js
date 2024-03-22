@@ -7,7 +7,7 @@ const pool = require('../db')
 
 // Signup
 
-router.post('/signup', async (req, res) => {
+router.post('/', async (req, res) => {
   const { email, password } = req.body
   const salt = bcrypt.genSaltSync(10)
   const hashedPassword = bcrypt.hashSync(password, salt)
