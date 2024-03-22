@@ -1,0 +1,11 @@
+.parent {
+    @apply bg-gray-200 m-6 rounded-xl grid grid-cols-3 grid-rows-2 border-l-green-900
+}
+
+.title {
+    @apply col-start-2
+}
+
+.date {
+    @apply col-start-2 row-start-2
+}

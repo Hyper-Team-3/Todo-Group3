@@ -1,4 +1,5 @@
 import styles from "./DoneTasks.module.css"
+import DoneTask from "./DoneTask";
 
 const DoneTasks = () => {
   /*
@@ -8,6 +9,7 @@ const DoneTasks = () => {
   return (
     <div className={styles.parent}>
         <div className={styles.taskheader}>Done</div>
+        <DoneTask />
     </div>
   )
 }

@@ -1,9 +1,9 @@
 .aside {
-    @apply row-span-10 h-screen bg-indigo-700 py-20 flex flex-col justify-between items-center
+    @apply row-span-10 h-screen bg-indigo-700 py-12 flex flex-col justify-between items-center
 }
 
 .logo {
-    @apply text-4xl font-semibold font-poppins text-white
+    @apply text-3xl font-semibold font-poppins text-white
 }
 
 .label {
@@ -11,5 +11,5 @@
 }
 
 .switch {
-    @apply block h-10 rounded-full bg-white w-20
+    @apply block h-8 rounded-full bg-white w-16
 }
