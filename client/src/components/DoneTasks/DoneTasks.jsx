@@ -9,7 +9,11 @@ const DoneTasks = () => {
   */
 
   return (
-    <div className={darkMode ? styles.parentDarkM : styles.parent}>
+    <div
+      className={
+        darkMode ? `${(styles.parent, styles.parentDarkM)}` : `${styles.parent}`
+      }
+    >
       <div className={darkMode ? styles.taskheaderDarkM : styles.taskheader}>
         Done
       </div>

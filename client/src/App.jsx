@@ -17,7 +17,6 @@ function App() {
 
   function toggleMode() {
     setDarkMode(!darkMode);
-    console.log("mmm", darkMode);
   }
 
   return (
