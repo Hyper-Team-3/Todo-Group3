@@ -7,9 +7,17 @@
 }
 
 .title {
-    @apply col-start-2
+    @apply col-start-2 font-poppins text-gray-500
 }
 
 .date {
-    @apply col-start-2 row-start-2
+    @apply col-start-2 row-start-2 font-poppins text-gray-500 text-sm
+}
+
+.complete {
+
+}
+
+.delete {
+
 }

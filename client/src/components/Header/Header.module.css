@@ -10,6 +10,14 @@
     @apply flex gap-4 pl-4 border-l border-gray-500 border-opacity-40
 }
 
+.headerDarkM {
+    @apply col-span-12 flex justify-between p-5 m-8 bg-indigo-700 rounded-xl shadow-lg
+}
+
+.titleDarkM {
+    @apply text-2xl font-semibold text-black
+}
+
 /* 
 Temp for random profile picture
 */
@@ -18,5 +26,9 @@ Temp for random profile picture
 }
 
 .name {
+    @apply text-2xl font-semibold text-gray-800
+}
+
+.nameDarkM {
     @apply text-2xl font-semibold text-gray-800
 }

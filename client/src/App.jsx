@@ -1,43 +1,31 @@
+import { useState, createContext } from "react";
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import {useCookies} from 'react-cookie'
 import TodoBoard from "./pages/TodoBoardPage";
-import Auth from "./components/Auth/Auth";
-import { useState, useEffect } from "react";
-import TodoBoardPage from './pages/TodoBoardPage';
+import Auth from "./components/Auth";
+// import Signup from "./pages/Signup";
+// import Login from "./pages/Login";
+
+export const ThemeContext = createContext();
 
 function App() {
+  const router = createBrowserRouter([
+    { path: "/", element: <TodoBoard /> },
+    { path: "/signup", element: <Auth /> },
+  ]);
 
-  const [tasks, setTasks] = useState(null)
-  const [cookies, setCookie, removeCookie] = useCookies(null)
-  const userEmail = cookies.Email
-  const authToken = cookies.AuthToken
+  const [darkMode, setDarkMode] = useState(false);
 
-  async function getData(){
-    try {
-      const response = await fetch(`${process.env.REACT_APP_SERVERURL}/todos/${userEmail}`)
-      const json = await response.json()
-      console.log(json);
-      setTasks(json)
-    } catch (err) {
-      console.error(err.message)
-    }
+  function toggleMode() {
+    setDarkMode(!darkMode);
   }
 
-  useEffect(() => {
-    if(authToken){
-      getData()
-    }
-  }, [])
-
-  //Sort by date
-  const sortedTasks = tasks?.sort((a,b) => new Date(a.date) - new Date(b.date))
-
-  console.log(sortedTasks, 'sort')
-console.log(authToken, "authToken")
   return (
-    <div>
-      {!authToken && <Auth />}
-      {authToken && <TodoBoardPage sortedTasks={sortedTasks}/>}
-    </div>
+    <>
+      <ThemeContext.Provider value={{ darkMode, toggleMode }}>
+        <RouterProvider router={router} />
+      </ThemeContext.Provider>{" "}
+    </>
   );
 }
 

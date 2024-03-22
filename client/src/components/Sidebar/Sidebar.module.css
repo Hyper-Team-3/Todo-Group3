@@ -1,5 +1,5 @@
 .aside {
-    @apply row-span-10 h-screen bg-indigo-700 py-12 flex flex-col justify-between items-center
+    @apply row-span-10 bg-indigo-700 py-12 flex flex-col justify-between items-center
 }
 
 .logo {
@@ -11,5 +11,16 @@
 }
 
 .switch {
-    @apply block h-8 rounded-full bg-white w-16
+    @apply block h-10 rounded-full bg-white w-20
+}
+
+
+.logoDarkM {
+    @apply text-3xl font-semibold font-poppins text-black
+}
+
+.label {}
+
+.switchDarkM {
+    @apply block h-10 rounded-full bg-black w-20
 }
