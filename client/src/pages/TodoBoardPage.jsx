@@ -8,9 +8,9 @@ import { ThemeContext } from "../App";
 
 const TodoBoardPage = () => {
   const { darkMode } = useContext(ThemeContext);
-  const style = "grid grid-cols-13 grid-rows-6 bg-gray-200 overflow-hidden";
+  const style = "grid grid-cols-13 grid-rows-6 bg-gray-200 overflow-hidden h-screen";
   const darkModebg =
-    "grid grid-cols-13 grid-rows-6 bg-gray-800/90 overflow-hidden";
+    "grid grid-cols-13 grid-rows-6 bg-gray-800/90 overflow-hidden h-screen";
   return (
     <div className={darkMode ? darkModebg : style}>
       <Sidebar />

@@ -19,7 +19,9 @@ const Tasks = () => {
       <div className={darkMode ? styles.taskheaderDarkM : styles.taskheader}>
         Tasks
       </div>
-      <Task />
+      <div className={styles.taskwrapper}>
+        <Task />
+      </div>
       <div className={styles.taskfooter}>
         <button>+ Add New</button>
       </div>
