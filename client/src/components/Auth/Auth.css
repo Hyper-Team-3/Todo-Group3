@@ -1,33 +1,43 @@
-/* Container */
-
-.register-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-  margin-top: 5%;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.create-account {
-  width: 60%;
-  padding: 2rem;
-  min-width: 40%;
+/* Container */
+
+.auth-container-wrapper {
+  display: flex;
+  align-items: stretch;
+  height: 65vh;
+  background-color: #fff;
+  border-radius: 1.5rem;
+}
+
+.auth-container-box {
+  display: flex;
+  flex-direction: column;
+  order: 0;
+  padding: 3rem;
+  flex: 1;
+  border-radius: 1.5rem;
+  min-width: 45vh;
 }
 
 .join-text {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   margin-bottom: 1rem;
+  font-weight: 400;
+}
+
+.p-text {
+  margin-bottom: 3rem;
+  font-size: 1.2rem;
 }
 
 .bg-image {
-  width: 100%;
-  height: auto;
-  background-image: url("../../assets/hello.png");
-  background-size: cover;
-  min-width: 57vh;
-  background-position: center;
-  border-top-left-radius: 16px;
-  border-bottom-left-radius: 16px;
+  border-top-left-radius: 1.5rem;
+  border-bottom-left-radius: 1.5rem;
 }
 
 /* Row */
@@ -44,13 +54,7 @@
   padding-right: 1.5rem;
 }
 
-.py-12 {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
-}
-
-/* button */
-
+/* Button */
 .font-bold {
   font-weight: 700;
 }
@@ -59,43 +63,52 @@
   color: #fff;
 }
 
+.login-button,
 .register-button {
   background-color: #5d3fe1 !important;
   border-radius: 3rem;
-  width: 10rem;
+  width: 7rem;
   height: 3rem;
   color: white;
+  margin-top: 0.8rem;
+  font-size: 1.1rem;
 }
 
-.input-box {
-  margin-top: 0.2rem;
-  margin-bottom: 0.19rem;
+.auth-container-box {
+  width: 30vh;
+}
+
+.auth-container-form {
+  text-align: center;
+}
+
+.input-container {
+  margin-bottom: 0.6rem;
+}
+
+input.input-box.rounded-input {
+  width: 100%;
   padding: 0.5rem;
-  display: block;
-  width: 80%;
+  border: 1px solid #ccc;
+  border-radius: 1rem;
+  height: 3rem;
   border-width: 0.1rem;
   border-style: solid;
   border-color: #ccc;
-  border-radius: 0.375rem;
+  border-radius: 1.2rem;
   box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
   outline: none;
   transition: ring-color 0.15s ease-in-out, border-color 0.15s ease-in-out;
+  margin-bottom: 1rem;
 }
 
 .rounded-input {
   border-radius: 0.5rem;
 }
 
-.dark\:bg-blue-700 {
-  background-color: #342283;
-}
-
-.dark\:text-white {
-  color: #fff;
-}
-
-.dark\:hover\:bg-blue-900:hover {
-  background-color: #2a4365;
+.checkbox-container {
+  display: flex;
+  align-items: center;
 }
 
 /* Link */
@@ -105,82 +118,72 @@
 
 .text-blue-500 {
   color: #4299e1;
+
+  font-size: 1rem;
 }
 
-.dark\:text-blue-500 {
-  color: #4299e1;
-}
-
-/* media quarry */
+/* media query */
 
 @media (max-width: 450px) {
+  .auth-container-wrapper {
+    height: auto;
+    flex-direction: column;
+    margin-top: 10rem;
+  }
+
+  .auth-container-box {
+    padding: 1.5rem;
+    border-radius: 0;
+    min-width: auto;
+    width: 100%;
+  }
+
   .bg-image {
     display: none;
   }
 
-  .create-account {
-    display: flex;
-    padding: 2rem;
-    font-size: 1rem;
-    margin-top: 10%;
-    margin-left: 1rem;
-    margin: auto;
+  .input-box.rounded-input {
+    border-radius: 0.5rem;
   }
+}
 
-  .join-text {
-    font-size: 1.2rem;
-    margin-left: 2rem;
-    text-align: center;
-  }
-
-  .login-form {
-    display: flex;
+@media screen and (max-width: 900px) {
+  .auth-container-wrapper {
+    height: auto;
     flex-direction: column;
-    min-height: 20vh;
+    align-items: center;
+    margin-top: 2rem;
   }
-}
 
-/* RegisterForm.css */
-.register-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 60vh;
-}
+  .auth-container-box {
+    padding: 2rem;
+    border-radius: 1.5rem;
+    width: 80%;
 
-.create-account {
-  max-width: 100vh;
-  min-width: 50vh;
-}
+    max-width: 30rem;
 
-.input-container {
-  margin-bottom: 1rem;
-}
+    margin: 2rem 0;
+  }
 
-.input-box {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 1rem;
-  height: 3rem;
-}
+  .bg-image {
+    order: -1;
+    width: 100%;
+    height: 10rem;
+    object-fit: cover;
+    border-radius: 0;
+    aspect-ratio: 1;
+    border-top-left-radius: 1.5rem;
+    border-top-right-radius: 1.5rem;
+  }
 
-.checkbox-container {
-  display: flex;
-  align-items: center;
-}
+  .bg-image img {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 1.5rem;
+    border-bottom-left-radius: 1.5rem;
+  }
 
-.login-button {
-  background-color: #5d3fe1 !important;
-  border-radius: 3rem;
-  width: 10rem;
-  height: 3rem;
-  color: white;
-  margin-top: 2rem;
-}
-
-.login-form {
-  display: flex;
-  flex-direction: column;
-  min-height: 55.8vh;
+  .input-box.rounded-input {
+    border-radius: 1rem; /* Adjust border radius */
+  }
 }

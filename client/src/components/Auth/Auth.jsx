@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useCookies } from "react-cookie";
 import "./Auth.css";
+import hello from "../../assets/hello.png"
 
 const Auth = () => {
   const [cookies, setCookie, removeCookie] = useCookies(null);
@@ -45,11 +46,15 @@ const Auth = () => {
   };
 
   return (
-    <div className="register-container">
-      <div className="bg-image"></div>
-      <div className="create-account flex items-center justify-center px-6">
+   
+      <div className="create-account flex items-center justify-center">
+        <div className="auth-container-wrapper
+         p-0 shadow-lg flex">
+        <img className='bg-image'  src={hello}></img>
         <div className="auth-container-box">
-          <h2 className="join-text">{isLogin ? 'Please log in' : 'Please sign up!'}</h2>
+          <h2 className="join-text">{isLogin ? 'Welcome Back!' : 'Please sign up!'}</h2>
+          {isLogin && <p className='p-text'><p>Let's pick up where you left off and continue organizing your tasks effectively!</p></p>}
+          {!isLogin && ( <p className='p-text'>Join us and start organizing your tasks effectively!</p> )}
           <form className="auth-container-form" onSubmit={isLogin ? (e) => handleSubmit(e,`login`): (e) => handleSubmit(e,"signup")}>
             <div className="input-container">
               <input
@@ -89,7 +94,7 @@ const Auth = () => {
           <div className="auth-options">
             
           </div>
-          <div className="text-sm text-center">
+          <div className="text-sm text-center mt-3">
             <p>
               {isLogin
                 ? "Don't have an account?"
@@ -101,7 +106,8 @@ const Auth = () => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+  
   );
 };
 
