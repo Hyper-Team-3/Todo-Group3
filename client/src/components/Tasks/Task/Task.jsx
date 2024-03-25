@@ -21,7 +21,7 @@ function Task({ email, title, date, id, progress, completed, getData, task }) {
             id: id,
             user_email: cookies.Email,
             title: title,
-            progress: progress,
+            progress: 100,
             date: date,
             completed: !completed,
           }),
