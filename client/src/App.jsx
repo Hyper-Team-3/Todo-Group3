@@ -7,27 +7,38 @@ export const ThemeContext = createContext();
 
 function App() {
   const [darkMode, setDarkMode] = useState(false);
-  const [tasks, setTasks] = useState(null)
-  const [cookies, setCookie, removeCookie] = useCookies(null)
-  const userEmail = cookies.Email
-  const authToken = cookies.AuthToken
+  const [tasks, setTasks] = useState(null);
+  // eslint-disable-next-line no-unused-vars
+  const [cookies, setCookie, removeCookie] = useCookies(null);
+  const userEmail = cookies.Email;
+  const authToken = cookies.AuthToken;
 
-  async function getData(){
+  async function getData() {
     try {
-      const response = await fetch(`${import.meta.env.VITE_SERVERURL}/todos/${userEmail}`)
-      const json = await response.json()
-      setTasks(json)
-      console.log("GOT DATA")
+      const response = await fetch(`${import.meta.env.VITE_SERVERURL}/todos`, {
+        headers: {
+          "X-Token": cookies.AuthToken,
+        },
+      });
+
+      //if the answer is not 200, we throw an error
+      if (!response.ok) {
+        throw new Error("Unauthorized");
+      }
+      const json = await response.json();
+      setTasks(json);
+      console.log("GOT DATA");
     } catch (err) {
-      console.error(err.message)
+      console.error(err.message);
     }
   }
 
   useEffect(() => {
-    if(authToken){
-      getData()
+    if (authToken) {
+      getData();
     }
-  }, [])
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   function toggleMode() {
     setDarkMode(!darkMode);
@@ -35,10 +46,11 @@ function App() {
 
   return (
     <>
-      <ThemeContext.Provider value={{ darkMode, toggleMode, userEmail, tasks, getData }}>
-      {!authToken && <Auth />}
-      {authToken && <TodoBoard />}
-        
+      <ThemeContext.Provider
+        value={{ darkMode, toggleMode, userEmail, tasks, getData }}
+      >
+        {!authToken && <Auth />}
+        {authToken && <TodoBoard />}
       </ThemeContext.Provider>
     </>
   );
