@@ -27,12 +27,11 @@ function App() {
       }
       const json = await response.json();
       setTasks(json);
-      console.log("GOT DATA");
-    } catch (err) {
-      console.error(err.message);
+    } catch (error) {
+      console.error(error);
     }
   }
-
+  console.log(tasks);
   useEffect(() => {
     if (authToken) {
       getData();

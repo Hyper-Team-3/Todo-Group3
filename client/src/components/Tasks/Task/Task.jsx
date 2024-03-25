@@ -9,6 +9,8 @@ function Task({ title, date, id, progress, completed, getData, task }) {
   const [showModal, setShowModal] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(null);
 
+  console.log("task task", task);
+
   async function handleComplete(e) {
     e.preventDefault();
     try {
@@ -46,6 +48,9 @@ function Task({ title, date, id, progress, completed, getData, task }) {
         `${import.meta.env.VITE_SERVERURL}/todos/${id}`,
         {
           method: "DELETE",
+          headers: {
+            "X-Token": cookies.AuthToken,
+          },
         }
       );
       if (response.status === 200) {
@@ -55,9 +60,6 @@ function Task({ title, date, id, progress, completed, getData, task }) {
       console.error(err.message);
     }
   }
-
-  console.log(title, "title");
-  console.log(completed, "completed");
 
   return (
     <div className={styles.parent}>

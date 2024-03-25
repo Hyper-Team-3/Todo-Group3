@@ -4,12 +4,15 @@ import { useCookies } from "react-cookie";
 export default function Modal({ mode, setShowModal, getData, task }) {
   const [cookies, setCookie, removeCookie] = useCookies(null);
   const editMode = mode === "edit" ? true : false;
+  console.log("task modal", task);
   const [data, setData] = useState({
     title: editMode ? task.title : "",
     progress: editMode ? task.progress : 10,
     date: editMode ? task.date : new Date(),
     completed: false,
   });
+
+  console.log("task modal", task);
 
   async function postData(e) {
     e.preventDefault();
