@@ -17,14 +17,14 @@ const Header = () => {
   return (
     <header className={darkMode ? styles.headerDarkM : styles.header}>
       <h1 className={darkMode ? styles.titleDarkM : styles.title}>
-        To Do List
+        Welcome Back!
       </h1>
-      <button className='signout' onClick={signOut}>SIGN OUT</button>
+      
       <div className={styles.profilewrapper}>
-        <div className={styles.circle} />
+  
         <p className={darkMode ? styles.nameDarkM : styles.name}>
           Simon Rosengren
-        </p>
+        </p><button className={styles.signout} onClick={signOut}>Sign Out</button>
       </div>
     </header>
   );
