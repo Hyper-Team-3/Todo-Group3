@@ -4,8 +4,11 @@ import { FaRegTrashCan } from "react-icons/fa6";
 import { useState } from "react";
 import Modal from "../Modal/Modal";
 import { useCookies } from "react-cookie";
+import { ThemeContext } from "../../App";
+import { useContext } from "react";
 
 function Task({ email, title, date, id, progress, completed, getData, task }) {
+  const { darkMode } = useContext(ThemeContext);
   const [showModal, setShowModal] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(null);
 
@@ -57,7 +60,7 @@ function Task({ email, title, date, id, progress, completed, getData, task }) {
   console.log(completed, "completed");
 
   return (
-    <div className={styles.parent}>
+    <div className={darkMode ? styles.parentDarkM : styles.parent}>
       <div className={styles.info}>
         <p className={styles.title}>{title}</p>
         <p className={styles.date}>{date}</p>

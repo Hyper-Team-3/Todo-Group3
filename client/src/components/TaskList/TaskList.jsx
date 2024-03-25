@@ -18,7 +18,7 @@ const TaskList = () => {
       <div className={darkMode ? styles.taskheaderDarkM : styles.taskheader}>
         Tasks
       </div>
-      <div className={styles.taskwrapper}>
+      <div className={darkMode ? styles.taskwrapperDarkM : styles.taskwrapper}>
         {filteredTasks?.map((task) => {
           return (
             <Task
@@ -32,7 +32,7 @@ const TaskList = () => {
         })}
         <Task title="TEST" date="2002-24-24" />
       </div>
-      <div className={styles.taskfooter}>
+      <div className={darkMode ? styles.taskfooterDarkM : styles.taskfooter}>
         <button onClick={() => setShowModal(true)}>+ Add New</button>
       </div>
       {showModal && (

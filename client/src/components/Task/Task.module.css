@@ -1,22 +1,19 @@
 .parent {
-    @apply bg-gray-200 m-6 rounded-lg flex justify-between px-8 border-l-green-600 border-l-8
+    @apply bg-gray-200 m-6 rounded-lg flex justify-between px-8 text-gray-500 border-l-green-600 border-l-8 transition-colors duration-500
 }
 
 .title {
-    @apply font-poppins text-gray-500
+    @apply font-poppins
 }
 
 .date {
-    @apply font-poppins text-gray-500 text-sm
+    @apply font-poppins text-sm
 }
 
 .buttons {
     @apply flex gap-5
 }
-.complete {
 
-}
-
-.delete {
-
+.parentDarkM {
+    @apply bg-gray-800 m-6 rounded-lg flex justify-between px-8 text-white border-l-green-600 border-l-8 transition-colors duration-500
 }

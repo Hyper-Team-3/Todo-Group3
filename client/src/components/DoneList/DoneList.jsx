@@ -20,7 +20,7 @@ const DoneList = () => {
       <div className={darkMode ? styles.taskheaderDarkM : styles.taskheader}>
         Done
       </div>
-      <div className={styles.taskwrapper}>
+      <div className={darkMode ? styles.taskwrapperDarkM : styles.taskwrapper}>
         {filteredTasks?.map((task) => {
           return (
             <Task key={task.id} {...task} getData={getData} email={userEmail} />

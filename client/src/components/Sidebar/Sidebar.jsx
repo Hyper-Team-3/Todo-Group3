@@ -6,8 +6,19 @@ const Sidebar = () => {
   const { darkMode, toggleMode } = useContext(ThemeContext);
 
   return (
-    <aside className={styles.aside}>
+    <aside className={darkMode ? styles.asideDarkM : styles.aside}>
       <h1 className={darkMode ? styles.logoDarkM : styles.logo}>ToDo</h1>
+      <label class="inline-flex items-center cursor-pointer">
+        <input type="checkbox" value="" class="sr-only peer" onClick={toggleMode}/>
+        <div class="relative w-16 h-9 bg-white rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-[2px] after:bg-indigo-700  after:rounded-full after:h-8 after:w-8 after:transition-all peer-checked:after:bg-gray-900"></div>
+      </label>
+    </aside>
+  );
+};
+
+export default Sidebar;
+
+/*
       <label htmlFor="toggleTwo" className={styles.label}>
         <div className="relative">
           <input
@@ -17,11 +28,7 @@ const Sidebar = () => {
             onClick={toggleMode}
           />
           <div className={darkMode ? styles.switchDarkM : styles.switch}></div>
-          <div className="absolute w-8 h-8 transition bg-indigo-700 rounded-full dot dark:bg-dark-4 left-1 top-1 peer-checked:translate-x-full peer-checked:bg-primary"></div>
+          <div className={styles.circle}></div>
         </div>
       </label>
-    </aside>
-  );
-};
-
-export default Sidebar;
+*/
