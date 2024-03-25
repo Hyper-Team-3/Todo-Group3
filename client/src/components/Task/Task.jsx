@@ -2,10 +2,13 @@ import styles from "./Task.module.css";
 import { RiCheckboxCircleLine } from "react-icons/ri";
 import { FaRegTrashCan } from "react-icons/fa6";
 import { useState } from "react";
-import Modal from "../../Modal/Modal";
+import Modal from "../Modal/Modal";
 import { useCookies } from "react-cookie";
+import { ThemeContext } from "../../App";
+import { useContext } from "react";
 
 function Task({ email, title, date, id, progress, completed, getData, task }) {
+  const { darkMode } = useContext(ThemeContext);
   const [showModal, setShowModal] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(null);
 
@@ -16,9 +19,7 @@ function Task({ email, title, date, id, progress, completed, getData, task }) {
         `${import.meta.env.VITE_SERVERURL}/todos/${id}`,
         {
           method: "PUT",
-          headers: {
-            "Content-Type": "application/json"
-          },
+          headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             id: id,
             user_email: cookies.Email,
@@ -55,23 +56,16 @@ function Task({ email, title, date, id, progress, completed, getData, task }) {
     }
   }
 
-  const colors = () => {
-    if (progress < 30) {
-      return "border-l-red-600";
-    }
-    if (progress >= 30 && progress <= 70) {
-      return "border-l-yellow-600";
-    } else {
-      return "border-l-green-600";
-    }
-  };
+  console.log(title, "title");
+  console.log(completed, "completed");
 
   return (
-    <div className={styles.parent}>
-      <div className={`row-span-2 border-l-8 ${colors()} rounded-l`}></div>
-      <p className={styles.title}>{title}</p>
-      <p className={styles.date}>{date}</p>
-      <div className="row-span-2 flex items-center justify-around">
+    <div className={darkMode ? styles.parentDarkM : styles.parent}>
+      <div className={styles.info}>
+        <p className={styles.title}>{title}</p>
+        <p className={styles.date}>{date}</p>
+      </div>
+      <div className={styles.buttons}>
         <button className={styles.checkbutton} onClick={handleComplete}>
           <RiCheckboxCircleLine size="25" color="gray" />
         </button>
