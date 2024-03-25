@@ -8,6 +8,7 @@ export const ThemeContext = createContext();
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [tasks, setTasks] = useState(null);
+  // eslint-disable-next-line no-unused-vars
   const [cookies, setCookie, removeCookie] = useCookies(null);
   const userEmail = cookies.Email;
   const authToken = cookies.AuthToken;
@@ -36,6 +37,7 @@ function App() {
     if (authToken) {
       getData();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   function toggleMode() {
