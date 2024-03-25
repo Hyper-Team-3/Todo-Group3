@@ -8,7 +8,7 @@ export default function Modal({ mode, setShowModal, getData, task }) {
     title: editMode ? task.title : "",
     progress: editMode ? task.progress : 10,
     date: editMode ? task.date : new Date(),
-    completed: false,
+    completed: editMode ? task.completed : false,
   });
 
   async function postData(e) {
@@ -44,6 +44,7 @@ export default function Modal({ mode, setShowModal, getData, task }) {
             "Content-Type": "application/json",
             "X-Token": cookies.AuthToken,
           },
+
           body: JSON.stringify(data),
         }
       );
@@ -61,10 +62,19 @@ export default function Modal({ mode, setShowModal, getData, task }) {
     console.log("change");
     const { name, value } = e.target;
 
-    setData((data) => ({
-      ...data,
-      [name]: value,
-    }));
+    if (name === "progress") {
+      const completed = parseInt(value) === 100 ? true : false;
+      setData((data) => ({
+        ...data,
+        [name]: value,
+        completed: completed,
+      }));
+    } else {
+      setData((data) => ({
+        ...data,
+        [name]: value,
+      }));
+    }
   }
 
   console.log(data, "data");
