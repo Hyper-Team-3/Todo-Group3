@@ -43,6 +43,7 @@ export default function Modal({ mode, setShowModal, getData, task }) {
           headers: {
             "Content-Type": "application/json",
           },
+
           body: JSON.stringify(data),
         }
       );
@@ -60,10 +61,19 @@ export default function Modal({ mode, setShowModal, getData, task }) {
     console.log("change");
     const { name, value } = e.target;
 
-    setData((data) => ({
-      ...data,
-      [name]: value,
-    }));
+    if (name === "progress") {
+      const completed = parseInt(value) === 100 ? true : false;
+      setData((data) => ({
+        ...data,
+        [name]: value,
+        completed: completed,
+      }));
+    } else {
+      setData((data) => ({
+        ...data,
+        [name]: value,
+      }));
+    }
   }
 
   console.log(data, "data");

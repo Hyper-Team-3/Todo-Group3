@@ -28,8 +28,8 @@ function App() {
     if (authToken) {
       getData();
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
 
   function toggleMode() {
     setDarkMode(!darkMode);
