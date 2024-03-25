@@ -17,7 +17,7 @@ function App() {
     try {
       const response = await fetch(`${import.meta.env.VITE_SERVERURL}/todos`, {
         headers: {
-          "X-Token": cookies.AuthToken,
+          "x-token": cookies.AuthToken,
         },
       });
 

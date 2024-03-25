@@ -5,7 +5,7 @@ import { useState } from "react";
 import Modal from "../../Modal/Modal";
 import { useCookies } from "react-cookie";
 
-function Task({ email, title, date, id, progress, completed, getData, task }) {
+function Task({ title, date, id, progress, completed, getData, task }) {
   const [showModal, setShowModal] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(null);
 
@@ -18,7 +18,7 @@ function Task({ email, title, date, id, progress, completed, getData, task }) {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
-            "X-Token": cookies.AuthToken,
+            "x-token": cookies.AuthToken,
           },
           body: JSON.stringify({
             id: id,

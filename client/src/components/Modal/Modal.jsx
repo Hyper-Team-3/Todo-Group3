@@ -19,7 +19,7 @@ export default function Modal({ mode, setShowModal, getData, task }) {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-Token": cookies.AuthToken,
+          "x-token": cookies.AuthToken,
         },
         body: JSON.stringify(data),
       });
@@ -42,7 +42,7 @@ export default function Modal({ mode, setShowModal, getData, task }) {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
-            "X-Token": cookies.AuthToken,
+            "x-token": cookies.AuthToken,
           },
           body: JSON.stringify(data),
         }

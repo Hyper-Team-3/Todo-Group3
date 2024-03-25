@@ -2,6 +2,7 @@ const express = require("express");
 const { v4: uuidv4 } = require("uuid"); // creates unique ids for the todos
 const router = express.Router();
 const pool = require("../db");
+const jwt = require("jsonwebtoken");
 
 // create middleware
 const authMiddleware = (req, res, next) => {
