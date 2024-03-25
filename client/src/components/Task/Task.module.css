@@ -1,0 +1,22 @@
+.parent {
+    @apply bg-gray-200 m-6 rounded-lg flex justify-between px-8 border-l-green-600 border-l-8
+}
+
+.title {
+    @apply font-poppins text-gray-500
+}
+
+.date {
+    @apply font-poppins text-gray-500 text-sm
+}
+
+.buttons {
+    @apply flex gap-5
+}
+.complete {
+
+}
+
+.delete {
+
+}
