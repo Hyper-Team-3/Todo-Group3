@@ -1,9 +1,9 @@
 import { useContext } from "react";
-import styles from "./DoneTasks.module.css";
+import styles from "./DoneList.module.css";
 import { ThemeContext } from "../../App";
 import Task from "../Task";
 
-const DoneTasks = () => {
+const DoneList = () => {
   const { darkMode, tasks, userEmail, getData } = useContext(ThemeContext);
 
   const sortedTasks = tasks?.sort(
@@ -33,4 +33,4 @@ const DoneTasks = () => {
   );
 };
 
-export default DoneTasks;
+export default DoneList;

@@ -1,8 +1,8 @@
 import { useContext } from "react";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
-import Tasks from "../components/TaskList";
-import DoneTasks from "../components/DoneTasks";
+import TaskList from "../components/TaskList";
+import DoneList from "../components/DoneList";
 import Footer from "../components/Footer";
 import { ThemeContext } from "../App";
 
@@ -15,8 +15,8 @@ const TodoBoardPage = () => {
     <div className={darkMode ? darkModebg : style}>
       <Sidebar />
       <Header />
-      <Tasks />
-      <DoneTasks />
+      <TaskList />
+      <DoneList />
       <Footer />
     </div>
   );
