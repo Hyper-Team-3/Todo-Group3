@@ -3,6 +3,8 @@ import { useCookies } from "react-cookie";
 import "./Auth.css";
 import hello from "../../assets/hello.png"
 
+
+
 const Auth = () => {
   const [cookies, setCookie, removeCookie] = useCookies(null);
   const [isLogin, setIsLogin] = useState(true);
@@ -53,7 +55,7 @@ const Auth = () => {
         <img className='bg-image'  src={hello}></img>
         <div className="auth-container-box">
           <h2 className="join-text">{isLogin ? 'Welcome Back!' : 'Please sign up!'}</h2>
-          {isLogin && <p className='p-text'><p>Let's pick up where you left off and continue organizing your tasks effectively!</p></p>}
+          {isLogin && <p className='p-text'>Let's pick up where you left off and continue organizing your tasks effectively!</p>}
           {!isLogin && ( <p className='p-text'>Join us and start organizing your tasks effectively!</p> )}
           <form className="auth-container-form" onSubmit={isLogin ? (e) => handleSubmit(e,`login`): (e) => handleSubmit(e,"signup")}>
             <div className="input-container">
@@ -62,7 +64,7 @@ const Auth = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 className="input-box rounded-input"
-                placeholder="Email"
+                placeholder="📩 Email"
                 required
               />
             </div>
@@ -72,7 +74,7 @@ const Auth = () => {
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 className="input-box rounded-input"
-                placeholder="Password"
+                placeholder="🔒 Password"
                 required
               />
             </div>
@@ -83,7 +85,7 @@ const Auth = () => {
                   value={confirmPassword}
                   onChange={(e) => setConfirmPassword(e.target.value)}
                   className="input-box rounded-input"
-                  placeholder="Confirm Password"
+                  placeholder="🔐 Confirm Password"
                   required
                 />
               </div>
