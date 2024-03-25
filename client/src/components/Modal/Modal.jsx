@@ -19,12 +19,11 @@ export default function Modal({ mode, setShowModal, getData, task }) {
       const response = await fetch(`${import.meta.env.VITE_SERVERURL}/todos`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
       if (response.status === 200) {
-        console.log("worked");
         setShowModal(false);
         getData();
       }
@@ -48,7 +47,6 @@ export default function Modal({ mode, setShowModal, getData, task }) {
         }
       );
       if (response.status === 200) {
-        console.log("worked");
         setShowModal(false);
         getData();
       }
@@ -58,7 +56,6 @@ export default function Modal({ mode, setShowModal, getData, task }) {
   }
 
   function handleChange(e) {
-    console.log("change");
     const { name, value } = e.target;
 
     if (name === "progress") {
@@ -75,8 +72,6 @@ export default function Modal({ mode, setShowModal, getData, task }) {
       }));
     }
   }
-
-  console.log(data, "data");
 
   return (
     <div className="absolute left-0 top-0 w-lvw h-lvh flex items-center justify-center">

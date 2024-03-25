@@ -1,9 +1,7 @@
 import { useState } from "react";
 import { useCookies } from "react-cookie";
 import "./Auth.css";
-import hello from "../../assets/hello.png"
-
-
+import hello from "../../assets/hello.png";
 
 const Auth = () => {
   const [cookies, setCookie, removeCookie] = useCookies(null);
@@ -57,10 +55,8 @@ const Auth = () => {
     if (data.detail) {
       setError(data.detail);
     } else {
-      console.log(data, "data successfully");
       setCookie("Email", data.email);
       setCookie("AuthToken", data.token);
-
       window.location.reload();
     }
   };
@@ -76,16 +72,35 @@ const Auth = () => {
   );
 
   return (
-   
-      <div className="create-account flex items-center justify-center">
-        <div className="auth-container-wrapper
-         p-0 shadow-lg flex">
-        <img className='bg-image'  src={hello}></img>
+    <div className="create-account flex items-center justify-center">
+      <div
+        className="auth-container-wrapper
+         p-0 shadow-lg flex"
+      >
+        <img className="bg-image" src={hello}></img>
         <div className="auth-container-box">
-          <h2 className="join-text">{isLogin ? 'Welcome Back!' : 'Please sign up!'}</h2>
-          {isLogin && <p className='p-text'>Let's pick up where you left off and continue organizing your tasks effectively!</p>}
-          {!isLogin && ( <p className='p-text'>Join us and start organizing your tasks effectively!</p> )}
-          <form className="auth-container-form" onSubmit={isLogin ? (e) => handleSubmit(e,`login`): (e) => handleSubmit(e,"signup")}>
+          <h2 className="join-text">
+            {isLogin ? "Welcome Back!" : "Please sign up!"}
+          </h2>
+          {isLogin && (
+            <p className="p-text">
+              Let's pick up where you left off and continue organizing your
+              tasks effectively!
+            </p>
+          )}
+          {!isLogin && (
+            <p className="p-text">
+              Join us and start organizing your tasks effectively!
+            </p>
+          )}
+          <form
+            className="auth-container-form"
+            onSubmit={
+              isLogin
+                ? (e) => handleSubmit(e, `login`)
+                : (e) => handleSubmit(e, "signup")
+            }
+          >
             <div className="input-container">
               <input
                 type="email"
@@ -127,9 +142,7 @@ const Auth = () => {
               {isLogin ? "Login" : "Sign Up"}
             </button>
           </form>
-          <div className="auth-options">
-            
-          </div>
+          <div className="auth-options"></div>
           <div className="text-sm text-center mt-3">
             <p>
               {isLogin ? "Don't have an account?" : "Already have an account?"}
@@ -143,8 +156,7 @@ const Auth = () => {
           </div>
         </div>
       </div>
-      </div>
-  
+    </div>
   );
 };
 
