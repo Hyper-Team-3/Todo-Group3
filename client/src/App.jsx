@@ -8,20 +8,19 @@ export const ThemeContext = createContext();
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [tasks, setTasks] = useState(null);
+  // eslint-disable-next-line no-unused-vars
   const [cookies, setCookie, removeCookie] = useCookies(null);
   const userEmail = cookies.Email;
   const authToken = cookies.AuthToken;
 
-  async function getData() {
+  async function getData(){
     try {
-      const response = await fetch(
-        `${import.meta.env.VITE_SERVERURL}/todos/${userEmail}`
-      );
-      const json = await response.json();
-      setTasks(json);
-      console.log("GOT DATA");
+      const response = await fetch(`${import.meta.env.VITE_SERVERURL}/todos/${userEmail}`)
+      const json = await response.json()
+      setTasks(json)
+      console.log("GOT DATA")
     } catch (err) {
-      console.error(err.message);
+      console.error(err.message)
     }
   }
 
@@ -30,6 +29,7 @@ function App() {
       getData();
     }
   }, []);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
 
   function toggleMode() {
     setDarkMode(!darkMode);

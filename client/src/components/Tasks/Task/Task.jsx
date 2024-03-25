@@ -16,7 +16,9 @@ function Task({ email, title, date, id, progress, completed, getData, task }) {
         `${import.meta.env.VITE_SERVERURL}/todos/${id}`,
         {
           method: "PUT",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json"
+          },
           body: JSON.stringify({
             id: id,
             user_email: cookies.Email,

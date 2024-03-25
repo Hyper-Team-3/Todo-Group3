@@ -9,11 +9,8 @@ export default function Modal({ mode, setShowModal, getData, task }) {
     title: editMode ? task.title : "",
     progress: editMode ? task.progress : 10,
     date: editMode ? task.date : new Date(),
-    completed: false,
+    completed: editMode ? task.completed : false,
   });
-
-  // let todoTitleRef = useRef("");
-  // let progressRef = useRef(10);
 
   async function postData(e) {
     e.preventDefault();
@@ -21,7 +18,9 @@ export default function Modal({ mode, setShowModal, getData, task }) {
     try {
       const response = await fetch(`${import.meta.env.VITE_SERVERURL}/todos`, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json"
+        },
         body: JSON.stringify(data),
       });
       if (response.status === 200) {
@@ -41,7 +40,10 @@ export default function Modal({ mode, setShowModal, getData, task }) {
         `${import.meta.env.VITE_SERVERURL}/todos/${task.id}`,
         {
           method: "PUT",
-          headers: { "Content-Type": "application/json" },
+          headers: {
+            "Content-Type": "application/json",
+          },
+
           body: JSON.stringify(data),
         }
       );
