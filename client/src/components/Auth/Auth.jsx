@@ -10,11 +10,34 @@ const Auth = () => {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
 
-  async function handleSubmit(e, endpoint) {
+  const passwordCheck = (password) => {
+    if (!isLogin) {
+      if (password !== confirmPassword) {
+        setError("Passwords do not match!");
+        return false;
+      }
+      if (password.length < 8) {
+        setError("The password should be longer than 8 characters");
+        return false;
+      }
+      if (!/\d/.test(password)) {
+        setError("The password should include at least one number");
+        return false;
+      }
+      if (!/[a-z]/.test(password)) {
+        setError("The password should include at least one lowercase letter");
+        return false;
+      }
+    }
+    return true;
+  };
+
+  const handleSubmit = async (e, endpoint) => {
     e.preventDefault();
-    console.log(endpoint, "endpoint logged");
-    if (!isLogin && password !== confirmPassword) {
-      setError("Passwords do not match!");
+
+    const isPasswordValid = passwordCheck(password);
+
+    if (!isPasswordValid) {
       return;
     }
 
@@ -37,12 +60,17 @@ const Auth = () => {
 
       window.location.reload();
     }
-  }
+  };
 
   const toggleLoginForm = (status) => {
     setIsLogin(status);
     setError("");
   };
+
+  const isSubmitDisabled = !(
+    (isLogin && email && password) ||
+    (!isLogin && email && password && confirmPassword)
+  );
 
   return (
     <div className="register-container">
@@ -93,7 +121,11 @@ const Auth = () => {
               </div>
             )}
             {error && <p className="error">{error}</p>}
-            <button type="submit" className="login-button">
+            <button
+              type="submit"
+              className="login-button"
+              disabled={isSubmitDisabled}
+            >
               {isLogin ? "Login" : "Sign Up"}
             </button>
           </form>
