@@ -1,10 +1,10 @@
-import styles from "./Tasks.module.css";
-import Task from "./Task";
+import styles from "./TaskList.module.css";
+import Task from "../Task";
 import { useContext, useState } from "react";
 import { ThemeContext } from "../../App";
 import Modal from "../Modal/Modal";
 
-const Tasks = () => {
+const TaskList = () => {
   const [showModal, setShowModal] = useState(false);
   const { darkMode, tasks, userEmail, getData } = useContext(ThemeContext);
 
@@ -18,7 +18,7 @@ const Tasks = () => {
       <div className={darkMode ? styles.taskheaderDarkM : styles.taskheader}>
         Tasks
       </div>
-      <div className={styles.taskwrapper}>
+      <div className={darkMode ? styles.taskwrapperDarkM : styles.taskwrapper}>
         {filteredTasks?.map((task) => {
           return (
             <Task
@@ -30,8 +30,9 @@ const Tasks = () => {
             />
           );
         })}
+        <Task title="TEST" date="2002-24-24" />
       </div>
-      <div className={styles.taskfooter}>
+      <div className={darkMode ? styles.taskfooterDarkM : styles.taskfooter}>
         <button onClick={() => setShowModal(true)}>+ Add New</button>
       </div>
       {showModal && (
@@ -41,9 +42,4 @@ const Tasks = () => {
   );
 };
 
-export default Tasks;
-
-/* 
-  map tasks in taskwrapper
-  drill task title and task date
-*/
+export default TaskList;

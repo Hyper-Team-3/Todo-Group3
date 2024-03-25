@@ -1,22 +1,22 @@
 import { useContext } from "react";
 import Sidebar from "../components/Sidebar";
 import Header from "../components/Header";
-import Tasks from "../components/Tasks";
-import DoneTasks from "../components/DoneTasks";
+import TaskList from "../components/TaskList";
+import DoneList from "../components/DoneList";
 import Footer from "../components/Footer";
 import { ThemeContext } from "../App";
 
 const TodoBoardPage = () => {
   const { darkMode } = useContext(ThemeContext);
-  const style = "grid grid-cols-13 grid-rows-6 bg-gray-200 overflow-hidden h-screen";
+  const style = "grid grid-cols-13 grid-rows-6 auto-cols-fr bg-gray-200 overflow-hidden h-screen transition-colors duration-500";
   const darkModebg =
-    "grid grid-cols-13 grid-rows-6 bg-gray-800/90 overflow-hidden h-screen";
+    "grid grid-cols-13 grid-rows-6 auto-cols-fr bg-gray-800 overflow-hidden h-screen transition-colors duration-500";
   return (
     <div className={darkMode ? darkModebg : style}>
       <Sidebar />
       <Header />
-      <Tasks />
-      <DoneTasks />
+      <TaskList />
+      <DoneList />
       <Footer />
     </div>
   );
