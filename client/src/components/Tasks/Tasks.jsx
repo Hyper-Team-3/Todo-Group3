@@ -5,12 +5,13 @@ import { ThemeContext } from "../../App";
 import Modal from "../Modal/Modal";
 
 const Tasks = () => {
-  const [showModal, setShowModal] = useState(false)
+  const [showModal, setShowModal] = useState(false);
   const { darkMode, tasks, userEmail, getData } = useContext(ThemeContext);
 
-  const sortedTasks = tasks?.sort((a,b) => new Date(a.date) - new Date(b.date))
-  const filteredTasks = sortedTasks?.filter((task) => task.completed === false)
-
+  const sortedTasks = tasks?.sort(
+    (a, b) => new Date(a.date) - new Date(b.date)
+  );
+  const filteredTasks = sortedTasks?.filter((task) => task.completed === false);
 
   return (
     <div className={darkMode ? styles.parentDarkM : styles.parent}>
@@ -18,14 +19,24 @@ const Tasks = () => {
         Tasks
       </div>
       <div className={styles.taskwrapper}>
-        {filteredTasks?.map(task => {
-        return <Task key={task.id} {...task} getData={getData} email={userEmail} task={task}/>
-      })}
+        {filteredTasks?.map((task) => {
+          return (
+            <Task
+              key={task.id}
+              {...task}
+              getData={getData}
+              email={userEmail}
+              task={task}
+            />
+          );
+        })}
       </div>
       <div className={styles.taskfooter}>
-        <button onClick={()=>setShowModal(true)}>+ Add New</button>
+        <button onClick={() => setShowModal(true)}>+ Add New</button>
       </div>
-      {showModal && <Modal mode={"create"} setShowModal={setShowModal} getData={getData}/>}
+      {showModal && (
+        <Modal mode={"create"} setShowModal={setShowModal} getData={getData} />
+      )}
     </div>
   );
 };
