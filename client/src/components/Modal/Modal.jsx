@@ -5,10 +5,11 @@ export default function Modal({ mode, setShowModal, getData, task }) {
   const [cookies, setCookie, removeCookie] = useCookies(null);
   const editMode = mode === "edit" ? true : false;
   const [data, setData] = useState({
+    user_email: editMode ? task.user_email : cookies.Email,
     title: editMode ? task.title : "",
     progress: editMode ? task.progress : 10,
     date: editMode ? task.date : new Date(),
-    completed: false,
+    completed: editMode ? task.completed : false,
   });
 
   async function postData(e) {
@@ -18,8 +19,7 @@ export default function Modal({ mode, setShowModal, getData, task }) {
       const response = await fetch(`${import.meta.env.VITE_SERVERURL}/todos`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
-          "X-Token": cookies.AuthToken,
+          "Content-Type": "application/json"
         },
         body: JSON.stringify(data),
       });
@@ -42,7 +42,6 @@ export default function Modal({ mode, setShowModal, getData, task }) {
           method: "PUT",
           headers: {
             "Content-Type": "application/json",
-            "X-Token": cookies.AuthToken,
           },
           body: JSON.stringify(data),
         }

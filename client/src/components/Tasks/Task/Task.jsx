@@ -17,8 +17,7 @@ function Task({ email, title, date, id, progress, completed, getData, task }) {
         {
           method: "PUT",
           headers: {
-            "Content-Type": "application/json",
-            "X-Token": cookies.AuthToken,
+            "Content-Type": "application/json"
           },
           body: JSON.stringify({
             id: id,
