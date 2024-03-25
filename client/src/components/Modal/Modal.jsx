@@ -1,4 +1,4 @@
-import { useState, useRef } from "react";
+import { useState } from "react";
 import { useCookies } from "react-cookie";
 
 export default function Modal({ mode, setShowModal, getData, task }) {
@@ -59,10 +59,19 @@ export default function Modal({ mode, setShowModal, getData, task }) {
     console.log("change");
     const { name, value } = e.target;
 
-    setData((data) => ({
-      ...data,
-      [name]: value,
-    }));
+    if (name === "progress") {
+      const completed = parseInt(value) === 100 ? true : false;
+      setData((data) => ({
+        ...data,
+        [name]: value,
+        completed: completed,
+      }));
+    } else {
+      setData((data) => ({
+        ...data,
+        [name]: value,
+      }));
+    }
   }
 
   console.log(data, "data");

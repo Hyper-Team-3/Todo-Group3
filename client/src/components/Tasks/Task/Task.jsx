@@ -53,9 +53,6 @@ function Task({ email, title, date, id, progress, completed, getData, task }) {
     }
   }
 
-  console.log(title, "title");
-  console.log(completed, "completed");
-
   const colors = () => {
     if (progress < 30) {
       return "border-l-red-600";
