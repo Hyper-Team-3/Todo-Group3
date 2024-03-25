@@ -1,0 +1,19 @@
+.parent {
+    @apply absolute left-0 top-0 w-lvw h-lvh flex items-center justify-center
+}
+
+.background {
+    @apply absolute left-0 top-0 w-lvw h-lvh bg-[#00000080] flex items-center justify-center
+}
+
+.modalwindow {
+    @apply absolute md:w-[50vw] w-[95vw] max-w-[50rem] bg-white p-[2.5rem] rounded-[10px] shadow-lg
+}
+
+.modalwindowDarkM {
+    @apply absolute md:w-[50vw] w-[95vw] max-w-[50rem] bg-gray-900 p-[2.5rem] rounded-[10px] shadow-lg
+}
+
+.submit {
+    @apply border-none text-white bg-indigo-700 uppercase self-center px-6 py-2
+}
