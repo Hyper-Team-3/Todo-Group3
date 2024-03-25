@@ -1,5 +1,5 @@
 .parent {
-    @apply bg-gray-200 m-6 rounded-lg flex justify-between px-8 text-gray-500 border-l-green-600 border-l-8 transition-colors duration-500
+    @apply bg-gray-200 m-6 rounded-lg flex justify-between pr-8 text-gray-500 transition-colors duration-500
 }
 
 .title {
@@ -15,5 +15,5 @@
 }
 
 .parentDarkM {
-    @apply bg-gray-800 m-6 rounded-lg flex justify-between px-8 text-white border-l-green-600 border-l-8 transition-colors duration-500
+    @apply bg-gray-800 m-6 rounded-lg flex justify-between pr-8 text-white transition-colors duration-500
 }

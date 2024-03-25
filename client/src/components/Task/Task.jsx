@@ -56,11 +56,23 @@ function Task({ email, title, date, id, progress, completed, getData, task }) {
     }
   }
 
+  const colors = () => {
+    if (progress < 30) {
+      return "border-l-red-600";
+    }
+    if (progress >= 30 && progress <= 70) {
+      return "border-l-yellow-600";
+    } else {
+      return "border-l-green-600";
+    }
+  };
+
   console.log(title, "title");
   console.log(completed, "completed");
 
   return (
     <div className={darkMode ? styles.parentDarkM : styles.parent}>
+      <div className={`row-span-2 border-l-8 ${colors()} rounded-l`}></div>
       <div className={styles.info}>
         <p className={styles.title}>{title}</p>
         <p className={styles.date}>{date}</p>

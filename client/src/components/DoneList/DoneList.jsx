@@ -26,7 +26,6 @@ const DoneList = () => {
             <Task key={task.id} {...task} getData={getData} email={userEmail} />
           );
         })}
-        <Task title="TEST" date="2024-24-24" />
       </div>
       <div className={styles.taskfooter}></div>
     </div>

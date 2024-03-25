@@ -30,7 +30,6 @@ const TaskList = () => {
             />
           );
         })}
-        <Task title="TEST" date="2002-24-24" />
       </div>
       <div className={darkMode ? styles.taskfooterDarkM : styles.taskfooter}>
         <button onClick={() => setShowModal(true)}>+ Add New</button>
