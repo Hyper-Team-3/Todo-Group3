@@ -68,6 +68,7 @@ router.get("/:userEmail", async (req, res) => {
     res.json(todos.rows);
   } catch (err) {
     console.error(err.message);
+    res.status(500).send("Server Error: Could not retrieve todos.");
   }
 });
 
@@ -106,6 +107,7 @@ router.post("/", async (req, res) => {
     res.json(newTodo);
   } catch (err) {
     console.error(err.message);
+    res.status(500).send("Server Error: Could not create new todo.");
   }
 });
 
@@ -150,6 +152,7 @@ router.put("/:id", async (req, res) => {
     res.json(editTodo);
   } catch (err) {
     console.error(err.message);
+    res.status(500).send("Server Error: Could not edit todo.");
   }
 });
 
@@ -186,6 +189,7 @@ router.delete("/:id", async (req, res) => {
     res.json(deleteTodo);
   } catch (err) {
     console.error(err.message);
+    res.status(500).send("Server Error: Could not delete todo.");
   }
 });
 
