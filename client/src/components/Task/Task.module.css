@@ -6,11 +6,11 @@
   @apply flex justify-between w-full p-4;
 }
 .title {
-  @apply font-poppins;
+  @apply font-poppins font-medium;
 }
 
 .date {
-  @apply font-poppins text-sm;
+  @apply font-poppins text-sm font-light;
 }
 
 .buttons {
