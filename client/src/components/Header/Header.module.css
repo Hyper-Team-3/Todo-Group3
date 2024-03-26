@@ -7,7 +7,7 @@
 }
 
 .profilewrapper {
-  @apply flex gap-1 pl-7 border-l border-gray-500 border-opacity-40 flex-col items-end;
+  @apply flex gap-1 pl-7 border-l border-gray-500 border-opacity-40 flex-col items-end justify-center;
 }
 
 .headerDarkM {

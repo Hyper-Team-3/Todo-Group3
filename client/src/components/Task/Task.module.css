@@ -1,7 +1,10 @@
 .parent {
-    @apply bg-gray-200 m-6 rounded-lg flex justify-between pr-8 text-gray-500 transition-colors duration-500
+    @apply bg-gray-200 m-6 rounded-lg flex pr-8 text-gray-500 transition-colors duration-500
 }
 
+.content {
+    @apply flex justify-between w-full pl-4
+}
 .title {
     @apply font-poppins
 }

@@ -1,6 +1,7 @@
 import styles from "./Task.module.css";
 import { RiCheckboxCircleLine } from "react-icons/ri";
 import { FaRegTrashCan } from "react-icons/fa6";
+import { GrRevert } from "react-icons/gr";
 import { useState } from "react";
 import Modal from "../Modal/Modal";
 import { useCookies } from "react-cookie";
@@ -69,31 +70,40 @@ function Task({ email, title, date, id, progress, completed, getData, task }) {
   return (
     <div className={darkMode ? styles.parentDarkM : styles.parent}>
       <div className={`row-span-2 border-l-8 ${colors()} rounded-l`}></div>
-      <div className={styles.info}>
-        <p className={styles.title}>{title}</p>
-        <p className={styles.date}>{date}</p>
-      </div>
-      <div className={styles.buttons}>
-        <button className={styles.checkbutton} onClick={handleComplete}>
-          <RiCheckboxCircleLine size="25" color="gray" />
-        </button>
-        {!completed && (
-          <button className="edit" onClick={() => setShowModal(true)}>
-            EDIT
+      <div className={styles.content}>
+        <div className={styles.info}>
+          <p className={styles.title}>{title}</p>
+          <p className={styles.date}>{date}</p>
+        </div>
+        <div className={styles.buttons}>
+          {completed && (
+            <button className={styles.checkbutton} onClick={handleComplete}>
+              <GrRevert size="20" color="gray" />
+            </button>
+          )}
+          {!completed && (
+            <>
+              <button className={styles.checkbutton} onClick={handleComplete}>
+                <RiCheckboxCircleLine size="25" color="gray" />
+              </button>
+              <button className="edit" onClick={() => setShowModal(true)}>
+                EDIT
+              </button>
+            </>
+          )}
+          <button className={styles.deletebutton} onClick={handleDelete}>
+            <FaRegTrashCan size="20" color="gray" />
           </button>
+        </div>
+        {showModal && (
+          <Modal
+            mode={"edit"}
+            setShowModal={setShowModal}
+            getData={getData}
+            task={task}
+          />
         )}
-        <button className={styles.deletebutton} onClick={handleDelete}>
-          <FaRegTrashCan size="20" color="gray" />
-        </button>
       </div>
-      {showModal && (
-        <Modal
-          mode={"edit"}
-          setShowModal={setShowModal}
-          getData={getData}
-          task={task}
-        />
-      )}
     </div>
   );
 }
