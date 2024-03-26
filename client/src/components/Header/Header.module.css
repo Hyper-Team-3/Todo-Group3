@@ -1,5 +1,5 @@
 .header {
-  @apply col-span-12 flex justify-between p-5 m-8 bg-white rounded-xl shadow-lg transition-colors duration-500;
+  @apply col-span-12 flex justify-between items-center p-5 m-4 bg-white rounded-xl shadow-lg transition-colors duration-500;
 }
 
 .title {
@@ -11,7 +11,7 @@
 }
 
 .headerDarkM {
-  @apply col-span-12 flex justify-between p-5 m-8 bg-gray-900 rounded-xl shadow-lg text-white transition-colors duration-500;
+  @apply col-span-12 flex justify-between items-center  p-5 m-4 bg-gray-900 rounded-xl shadow-lg text-white transition-colors duration-500;
 }
 
 .titleDarkM {
@@ -19,7 +19,7 @@
 }
 
 .signout {
-  @apply rounded-md bg-indigo-700 px-2 text-white 
+  @apply rounded-md bg-indigo-700 px-2 text-white;
 }
 
 /* 

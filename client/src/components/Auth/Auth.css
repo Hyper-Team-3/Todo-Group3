@@ -9,7 +9,7 @@
 .auth-container-wrapper {
   display: flex;
   align-items: stretch;
-  height: 65vh;
+  height: 75vh;
   background-color: #fff;
   border-radius: 1.5rem;
   margin-top: 5rem;
@@ -22,7 +22,7 @@
   padding: 3rem;
   flex: 1;
   border-radius: 1.5rem;
-  min-width: 45vh;
+  min-width: 55vh;
 }
 
 .join-text {
@@ -32,7 +32,7 @@
 }
 
 .p-text {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
   font-size: 1.2rem;
 }
 
