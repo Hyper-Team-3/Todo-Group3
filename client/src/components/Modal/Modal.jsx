@@ -12,7 +12,7 @@ const Modal = ({ mode, setShowModal, getData, task }) => {
     user_email: editMode ? task.user_email : cookies.Email,
     title: editMode ? task.title : "",
     progress: editMode ? task.progress : 10,
-    date: editMode ? task.date : new Date(),
+    date: editMode ? task.date : new Date().toLocaleDateString(),
     completed: editMode ? task.completed : false,
   });
 
@@ -23,12 +23,11 @@ const Modal = ({ mode, setShowModal, getData, task }) => {
       const response = await fetch(`${import.meta.env.VITE_SERVERURL}/todos`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json"
+          "Content-Type": "application/json",
         },
         body: JSON.stringify(data),
       });
       if (response.status === 200) {
-        console.log("worked");
         setShowModal(false);
         getData();
       }
@@ -52,7 +51,6 @@ const Modal = ({ mode, setShowModal, getData, task }) => {
         }
       );
       if (response.status === 200) {
-        console.log("worked");
         setShowModal(false);
         getData();
       }
@@ -62,7 +60,6 @@ const Modal = ({ mode, setShowModal, getData, task }) => {
   }
 
   function handleChange(e) {
-    console.log("change");
     const { name, value } = e.target;
 
     if (name === "progress") {
@@ -79,8 +76,6 @@ const Modal = ({ mode, setShowModal, getData, task }) => {
       }));
     }
   }
-
-  console.log(data, "data");
 
   return (
     <div className={styles.parent}>

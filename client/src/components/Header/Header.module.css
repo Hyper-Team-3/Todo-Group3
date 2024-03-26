@@ -7,7 +7,7 @@
 }
 
 .profilewrapper {
-  @apply flex gap-1 pl-7 border-l border-gray-500 border-opacity-40 flex-col items-baseline;
+  @apply flex gap-1 pl-7 border-l border-gray-500 border-opacity-40 flex-col items-end justify-center;
 }
 
 .headerDarkM {
@@ -16,6 +16,10 @@
 
 .titleDarkM {
   @apply text-2xl font-semibold text-white transition-colors duration-500;
+}
+
+.signout {
+  @apply rounded-md bg-indigo-700 px-2 text-white 
 }
 
 /* 

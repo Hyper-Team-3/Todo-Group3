@@ -13,14 +13,15 @@ function App() {
   const userEmail = cookies.Email;
   const authToken = cookies.AuthToken;
 
-  async function getData(){
+  async function getData() {
     try {
-      const response = await fetch(`${import.meta.env.VITE_SERVERURL}/todos/${userEmail}`)
-      const json = await response.json()
-      setTasks(json)
-      console.log("GOT DATA")
+      const response = await fetch(
+        `${import.meta.env.VITE_SERVERURL}/todos/${userEmail}`
+      );
+      const json = await response.json();
+      setTasks(json);
     } catch (err) {
-      console.error(err.message)
+      console.error(err.message);
     }
   }
 
