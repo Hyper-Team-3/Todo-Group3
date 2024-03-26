@@ -109,14 +109,7 @@ router.post("/", authMiddleware, async (req, res) => {
     const id = uuidv4();
     const newTodo = await pool.query(
       `INSERT INTO todos(id, user_email, title, progress, date, completed) VALUES($1,$2,$3,$4,$5,$6)`,
-      [
-        id,
-        [id, req.email, title, progress, date],
-        title,
-        progress,
-        date,
-        completed,
-      ]
+      [id, req.email, title, progress, date, completed]
     );
     res.json(newTodo);
   } catch (err) {

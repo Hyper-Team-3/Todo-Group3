@@ -9,8 +9,6 @@ function Task({ title, date, id, progress, completed, getData, task }) {
   const [showModal, setShowModal] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(null);
 
-  console.log("task task", task);
-
   async function handleComplete(e) {
     e.preventDefault();
     try {
