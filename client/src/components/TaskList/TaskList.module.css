@@ -7,7 +7,7 @@
 }
 
 .taskwrapper {
-  @apply h-full border-b-2 overflow-y-scroll;
+  @apply h-full border-b-2 overflow-y-auto;
 }
 
 .taskfooter {
@@ -23,7 +23,7 @@
 }
 
 .taskwrapperDarkM {
-  @apply h-full border-b-2 border-b-gray-800;
+  @apply h-full border-b-2 border-b-gray-800 overflow-y-auto;
 }
 
 .taskfooterDarkM {

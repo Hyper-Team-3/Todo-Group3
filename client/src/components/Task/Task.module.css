@@ -1,5 +1,5 @@
 .parent {
-  @apply bg-gray-200 m-6 rounded-lg flex justify-between pr-8 text-gray-500 transition-colors duration-500 opacity-0;
+  @apply bg-gray-200 m-6 rounded-lg flex justify-between pr-8 text-gray-500 transition-all duration-500 ease-in-out;
 }
 
 .content {
@@ -18,20 +18,13 @@
 }
 
 .parentDarkM {
-  @apply bg-gray-800 m-6 rounded-lg flex justify-between pr-8 text-white transition-colors duration-500;
+  @apply bg-gray-800 m-6 rounded-lg flex justify-between pr-8 text-white transition-all duration-500 ease-in-out;
 }
 
-.animateIn {
-  animation: fadeIn 0.5s ease forwards;
+.opacity0 {
+  @apply opacity-0;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(-20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+.opacity1 {
+  @apply opacity-100 origin-bottom-right;
 }
