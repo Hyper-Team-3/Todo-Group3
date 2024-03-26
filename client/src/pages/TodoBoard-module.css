@@ -1,0 +1,17 @@
+@media (max-width: 450px) {
+  .grid-cols-13 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 5px;
+  }
+
+  .col-span-12 {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 5px;
+  }
+}
