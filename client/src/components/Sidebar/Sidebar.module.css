@@ -1,42 +1,67 @@
 .aside {
-    @apply row-span-10 bg-indigo-700 py-12 flex flex-col justify-between items-center transition-colors duration-500
+  @apply row-span-10 bg-indigo-700 py-12 flex flex-col justify-between items-center transition-colors duration-500;
 }
 
 .logo {
-    @apply text-3xl font-semibold font-poppins text-white
+  @apply text-3xl font-semibold font-poppins text-white;
 }
 
 .label {
-    @apply flex justify-center cursor-pointer select-none text-black
+  @apply flex justify-center cursor-pointer select-none text-black;
 }
 
 .switch {
-    @apply block h-10 rounded-full bg-white w-20
+  @apply block h-10 rounded-full bg-white w-20;
 }
 
-
 .asideDarkM {
-    @apply row-span-10 bg-gray-900 py-12 flex flex-col justify-between items-center transition-colors duration-500
+  @apply row-span-10 bg-gray-900 py-12 flex flex-col justify-between items-center transition-colors duration-500;
 }
 
 .logoDarkM {
-    @apply text-3xl font-semibold font-poppins text-white
+  @apply text-3xl font-semibold font-poppins text-white;
 }
 
 .switchDarkM {
-    @apply block h-10 rounded-full bg-gray-800 w-20
+  @apply block h-10 rounded-full bg-gray-800 w-20;
 }
 
 .slidercontainer {
-    @apply relative w-16 h-9 bg-white rounded-full 
+  @apply relative w-16 h-9 bg-white rounded-full;
 }
 
 .slider {
-    @apply absolute top-[2px] bg-indigo-700 rounded-full h-8 w-8 transition-all
+  @apply absolute top-[2px] bg-indigo-700 rounded-full h-8 w-8 transition-all;
 }
 
 .sliderDarkM {
-    @apply absolute top-[2px] bg-gray-800 rounded-full h-8 w-8 translate-x-full transition-all
+  @apply absolute top-[2px] bg-gray-800 rounded-full h-8 w-8 translate-x-full transition-all;
+}
+
+@media (max-width: 450px) {
+  .aside {
+    @apply h-2 flex-row py-8;
+  }
+
+  .logo {
+    @apply left-0 ml-4;
+  }
+
+  .slidercontainer {
+    @apply mr-3;
+  }
+
+  .asideDarkM {
+    @apply h-2 flex-row py-8;
+  }
+
+  .logoDarkM {
+    @apply left-0 ml-4;
+  }
+
+  .slidercontainerDarkM {
+    @apply mr-3;
+  }
 }
 
 /*
@@ -45,3 +70,17 @@ translate-x-full (some distance)
 after: absolute top 2px indigo-700 rounded full h8 w8 transition
 "relative w-16 h-9 bg-white rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full after:content-[''] after:absolute after:top-[2px] after:bg-indigo-700  after:rounded-full after:h-8 after:w-8 after:transition-all peer-checked:after:bg-gray-900"
 */
+
+@media (max-width: 450px) {
+  .aside {
+    @apply h-2 flex-row py-8;
+  }
+
+  .logo {
+    @apply left-0 ml-4;
+  }
+
+  .slidercontainer {
+    @apply mr-3;
+  }
+}
