@@ -6,7 +6,7 @@ import Auth from "./components/Auth";
 export const ThemeContext = createContext();
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState();
   const [tasks, setTasks] = useState(null);
   // eslint-disable-next-line no-unused-vars
   const [cookies, setCookie, removeCookie] = useCookies(null);
@@ -32,8 +32,24 @@ function App() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
 
   function toggleMode() {
-    setDarkMode(!darkMode);
+    setDarkMode(prevDarkMode => !prevDarkMode);
   }
+  
+  useEffect(() => {
+    const getDarkMode = localStorage.getItem('darkMode');
+    if (getDarkMode === 'true') {
+      setDarkMode(true);
+    } else {
+      setDarkMode(false);
+    }
+  }, [])
+  
+  useEffect(() => {
+    if (darkMode !== undefined) {
+      localStorage.setItem('darkMode', darkMode);
+    }
+  }, [darkMode]);
+  
 
   return (
     <>
