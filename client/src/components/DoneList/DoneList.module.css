@@ -30,4 +30,12 @@
   .parent {
     @apply ml-3 mr-3 mt-4;
   }
+
+  .taskheader {
+    @apply h-10;
+  }
+
+  .taskfooter {
+    @apply h-11;
+  }
 }
