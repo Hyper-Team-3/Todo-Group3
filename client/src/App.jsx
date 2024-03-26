@@ -13,25 +13,27 @@ function App() {
   const userEmail = cookies.Email;
   const authToken = cookies.AuthToken;
 
-  async function getData() {
+  const getData = async () => {
     try {
+      // richiesta fetch per effettuare la richiesta al server locale
       const response = await fetch(`${import.meta.env.VITE_SERVERURL}/todos`, {
         headers: {
-          "x-token": cookies.AuthToken,
+          "X-Token": cookies.AuthToken,
         },
       });
-
-      //if the answer is not 200, we throw an error
+      //se la risposta non è 200, lanciamo un errore
       if (!response.ok) {
         throw new Error("Unauthorized");
       }
+      //json.() serve a convertire la risposta in un oggetto Javascript
       const json = await response.json();
+      //per aggiornare lo stato con i dati ricevuti
       setTasks(json);
     } catch (error) {
       console.error(error);
     }
-  }
-  console.log(tasks);
+  };
+
   useEffect(() => {
     if (authToken) {
       getData();
