@@ -8,7 +8,7 @@ export default function Modal({ mode, setShowModal, getData, task }) {
     user_email: editMode ? task.user_email : cookies.Email,
     title: editMode ? task.title : "",
     progress: editMode ? task.progress : 10,
-    date: editMode ? task.date : new Date(),
+    date: editMode ? task.date : new Date().toLocaleDateString(),
     completed: editMode ? task.completed : false,
   });
 
