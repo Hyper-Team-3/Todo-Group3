@@ -34,8 +34,4 @@
   .parent {
     @apply ml-3;
   }
-
-  .taskfooter {
-    @apply;
-  }
 }
