@@ -6,12 +6,21 @@ import { useState } from "react";
 import Modal from "../Modal/Modal";
 import { useCookies } from "react-cookie";
 import { ThemeContext } from "../../App";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 
 function Task({ email, title, date, id, progress, completed, getData, task }) {
+  const [isAnimating, setIsAnimating] = useState(false);
   const { darkMode } = useContext(ThemeContext);
   const [showModal, setShowModal] = useState(false);
   const [cookies, setCookie, removeCookie] = useCookies(null);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsAnimating(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   async function handleComplete(e) {
     e.preventDefault();
@@ -68,7 +77,7 @@ function Task({ email, title, date, id, progress, completed, getData, task }) {
   };
 
   return (
-    <div className={darkMode ? styles.parentDarkM : styles.parent}>
+    <div className={`${darkMode ? styles.parentDarkM : styles.parent} ${isAnimating ? styles.animateIn : ''}`}>
       <div className={`row-span-2 border-l-8 ${colors()} rounded-l`}></div>
       <div className={styles.content}>
         <div className={styles.info}>

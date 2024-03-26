@@ -1,5 +1,5 @@
 .parent {
-    @apply bg-gray-200 m-6 rounded-lg flex pr-8 text-gray-500 transition-colors duration-500
+    @apply bg-gray-200 m-6 rounded-lg flex justify-between pr-8 text-gray-500 transition-colors duration-500 opacity-0
 }
 
 .content {
@@ -21,4 +21,17 @@
     @apply bg-gray-800 m-6 rounded-lg flex justify-between pr-8 text-white transition-colors duration-500
 }
 
-/* HELLO :) */
+.animateIn {
+    animation: fadeIn 0.5s ease forwards;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(-20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
