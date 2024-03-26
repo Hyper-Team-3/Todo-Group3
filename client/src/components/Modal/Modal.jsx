@@ -1,7 +1,11 @@
 import { useState } from "react";
 import { useCookies } from "react-cookie";
+import styles from "./Modal.module.css";
+import { useContext } from "react";
+import { ThemeContext } from "../../App";
 
-export default function Modal({ mode, setShowModal, getData, task }) {
+const Modal = ({ mode, setShowModal, getData, task }) => {
+  const { darkMode } = useContext(ThemeContext);
   const [cookies, setCookie, removeCookie] = useCookies(null);
   const editMode = mode === "edit" ? true : false;
   const [data, setData] = useState({
@@ -74,13 +78,13 @@ export default function Modal({ mode, setShowModal, getData, task }) {
   }
 
   return (
-    <div className="absolute left-0 top-0 w-lvw h-lvh flex items-center justify-center">
+    <div className={styles.parent}>
       <div
-        className="absolute left-0 top-0 w-lvw h-lvh bg-[#00000080] flex items-center justify-center"
+        className={styles.background}
         onClick={() => setShowModal(false)}
       ></div>
 
-      <div className="absolute md:w-[50vw] w-[95vw] max-w-[50rem] bg-white p-[2.5rem] rounded-[10px] shadow-lg">
+      <div className={darkMode ? styles.modalwindowDarkM : styles.modalwindow}>
         <div className="flex justify-between">
           <h3>Let's {mode} your task</h3>
           <button onClick={() => setShowModal(false)}>x</button>
@@ -108,7 +112,7 @@ export default function Modal({ mode, setShowModal, getData, task }) {
             onChange={handleChange}
           />
           <input
-            className="border-none text-white bg-[#5b3de1] uppercase self-center px-6 py-2"
+            className="border-none text-white bg-indigo-700 uppercase self-center px-6 py-2"
             type="submit"
             onClick={editMode ? editData : postData}
           />
@@ -117,3 +121,12 @@ export default function Modal({ mode, setShowModal, getData, task }) {
     </div>
   );
 }
+
+export default Modal;
+
+/*
+
+export default function Modal({ mode, setShowModal, getData, task }) {
+
+}
+*/
