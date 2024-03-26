@@ -22,17 +22,24 @@
   @apply rounded-md bg-indigo-700 px-2 text-white;
 }
 
-/* 
-Temp for random profile picture
-*/
-.circle {
-  @apply h-10 w-10 bg-gray-800 rounded-full;
-}
-
 .name {
   @apply text-2xl font-semibold text-gray-800 transition-colors duration-500;
 }
 
 .nameDarkM {
   @apply text-2xl font-semibold text-white transition-colors duration-500;
+}
+
+@media (max-width: 450px) {
+  .header {
+    @apply flex text-wrap;
+  }
+
+  .title {
+    @apply text-lg;
+  }
+
+  .name {
+    @apply text-lg;
+  }
 }

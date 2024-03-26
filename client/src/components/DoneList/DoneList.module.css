@@ -1,28 +1,33 @@
 .parent {
-    @apply col-start-8 col-span-6 row-span-4 bg-white rounded-xl shadow-lg ml-4 mr-8 flex flex-col justify-between transition-colors duration-500
+  @apply col-start-8 col-span-6 row-span-4 bg-white rounded-xl shadow-lg ml-4 mr-8 flex flex-col justify-between transition-colors duration-500;
 }
 
 .taskheader {
-    @apply flex justify-center items-center h-16 bg-indigo-700 rounded-t-xl font-poppins text-2xl text-white font-semibold
+  @apply flex justify-center items-center h-16 bg-indigo-700 rounded-t-xl font-poppins text-2xl text-white font-semibold;
 }
 
 .taskwrapper {
-    @apply h-full border-b-2 overflow-y-scroll
+  @apply h-full border-b-2 overflow-y-scroll;
 }
 
 .taskfooter {
-    @apply flex justify-center items-center h-16 rounded-b-xl font-poppins text-gray-500
+  @apply flex justify-center items-center h-16 rounded-b-xl font-poppins text-gray-500;
 }
 
-
 .parentDarkM {
-    @apply col-start-8 col-span-6 row-span-4 bg-gray-700 rounded-xl shadow-lg ml-4 mr-8 flex flex-col justify-between text-white transition-colors duration-500
+  @apply col-start-8 col-span-6 row-span-4 bg-gray-700 rounded-xl shadow-lg ml-4 mr-8 flex flex-col justify-between text-white transition-colors duration-500;
 }
 
 .taskheaderDarkM {
-    @apply flex justify-center items-center h-16 bg-gray-900 rounded-t-xl font-poppins text-2xl font-semibold
+  @apply flex justify-center items-center h-16 bg-gray-900 rounded-t-xl font-poppins text-2xl font-semibold;
 }
 
 .taskwrapperDarkM {
-    @apply h-full border-b-2 border-b-gray-800
+  @apply h-full border-b-2 border-b-gray-800;
+}
+
+@media (max-width: 450px) {
+  .parent {
+    @apply ml-3 mr-3 mt-4;
+  }
 }
