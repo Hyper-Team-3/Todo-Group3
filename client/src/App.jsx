@@ -6,21 +6,22 @@ import Auth from "./components/Auth";
 export const ThemeContext = createContext();
 
 function App() {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState();
   const [tasks, setTasks] = useState(null);
   // eslint-disable-next-line no-unused-vars
   const [cookies, setCookie, removeCookie] = useCookies(null);
   const userEmail = cookies.Email;
   const authToken = cookies.AuthToken;
 
-  async function getData(){
+  async function getData() {
     try {
-      const response = await fetch(`${import.meta.env.VITE_SERVERURL}/todos/${userEmail}`)
-      const json = await response.json()
-      setTasks(json)
-      console.log("GOT DATA")
+      const response = await fetch(
+        `${import.meta.env.VITE_SERVERURL}/todos/${userEmail}`
+      );
+      const json = await response.json();
+      setTasks(json);
     } catch (err) {
-      console.error(err.message)
+      console.error(err.message);
     }
   }
 
@@ -32,8 +33,24 @@ function App() {
   // eslint-disable-next-line react-hooks/exhaustive-deps
 
   function toggleMode() {
-    setDarkMode(!darkMode);
+    setDarkMode(prevDarkMode => !prevDarkMode);
   }
+  
+  useEffect(() => {
+    const getDarkMode = localStorage.getItem('darkMode');
+    if (getDarkMode === 'true') {
+      setDarkMode(true);
+    } else {
+      setDarkMode(false);
+    }
+  }, [])
+  
+  useEffect(() => {
+    if (darkMode !== undefined) {
+      localStorage.setItem('darkMode', darkMode);
+    }
+  }, [darkMode]);
+  
 
   return (
     <>

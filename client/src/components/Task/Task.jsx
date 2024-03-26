@@ -31,7 +31,6 @@ function Task({ email, title, date, id, progress, completed, getData, task }) {
         }
       );
       if (response.status === 200) {
-        console.log("worked");
         getData();
       }
     } catch (err) {
@@ -66,9 +65,6 @@ function Task({ email, title, date, id, progress, completed, getData, task }) {
       return "border-l-green-600";
     }
   };
-
-  console.log(title, "title");
-  console.log(completed, "completed");
 
   return (
     <div className={darkMode ? styles.parentDarkM : styles.parent}>
