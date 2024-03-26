@@ -11,7 +11,7 @@
 }
 
 .headerDarkM {
-  @apply col-span-12 flex justify-between items-center  p-5 m-4 bg-gray-900 rounded-xl shadow-lg text-white transition-colors duration-500;
+  @apply col-span-12 flex justify-between items-center p-5 m-4 bg-gray-900 rounded-xl shadow-lg text-white transition-colors duration-500;
 }
 
 .titleDarkM {
@@ -40,6 +40,18 @@
   }
 
   .name {
+    @apply text-lg;
+  }
+
+  .headerDarkM {
+    @apply flex text-wrap;
+  }
+
+  .titleDarkM {
+    @apply text-lg;
+  }
+
+  .nameDarkM {
     @apply text-lg;
   }
 }

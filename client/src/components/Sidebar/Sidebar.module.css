@@ -38,6 +38,32 @@
   @apply absolute top-[2px] bg-gray-800 rounded-full h-8 w-8 translate-x-full transition-all;
 }
 
+@media (max-width: 450px) {
+  .aside {
+    @apply h-2 flex-row py-8;
+  }
+
+  .logo {
+    @apply left-0 ml-4;
+  }
+
+  .slidercontainer {
+    @apply mr-3;
+  }
+
+  .asideDarkM {
+    @apply h-2 flex-row py-8;
+  }
+
+  .logoDarkM {
+    @apply left-0 ml-4;
+  }
+
+  .slidercontainerDarkM {
+    @apply mr-3;
+  }
+}
+
 /*
 translate-x-full (some distance)
 

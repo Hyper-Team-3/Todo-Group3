@@ -38,4 +38,12 @@
   .taskfooter {
     @apply h-11;
   }
+
+  .parentDarkM {
+    @apply ml-3 mr-3 mt-4;
+  }
+
+  .taskheaderDarkM {
+    @apply h-11;
+  }
 }
