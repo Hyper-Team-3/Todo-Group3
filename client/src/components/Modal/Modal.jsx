@@ -91,7 +91,7 @@ const Modal = ({ mode, setShowModal, getData, task }) => {
         </div>
         <form className="flex flex-col gap-4">
           <input
-            className="my-[11px] py-3 px-4 rounded-[12px] border-solid border-[1.5px] border-[#e6e8ec]"
+            className="my-[11px] py-3 px-4 rounded-[12px] border-solid border-[1.5px] border-[#e6e8ec] text-black"
             required
             maxLength={30}
             placeholder="Your task goes here"

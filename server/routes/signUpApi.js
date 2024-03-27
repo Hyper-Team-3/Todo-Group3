@@ -19,7 +19,7 @@ router.post('/', async (req, res) => {
   } catch (err) {
     console.error(err)
     if(err){
-      res.json({detail: err.detail})
+      res.status(500).json({detail: err.detail})
     }
   }
 })
