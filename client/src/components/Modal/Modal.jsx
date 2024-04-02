@@ -23,7 +23,7 @@ const Modal = ({ mode, setShowModal, getData, task }) => {
       const response = await fetch(`${import.meta.env.VITE_SERVERURL}/todos`, {
         method: "POST",
         headers: {
-          "Content-Type": "application/json",
+          "Content-Type": "application/json", "authorization": `Bearer ${cookies.AuthToken}`
         },
         body: JSON.stringify(data),
       });
@@ -44,7 +44,7 @@ const Modal = ({ mode, setShowModal, getData, task }) => {
         {
           method: "PUT",
           headers: {
-            "Content-Type": "application/json",
+            "Content-Type": "application/json", "authorization": `Bearer ${cookies.AuthToken}`
           },
 
           body: JSON.stringify(data),

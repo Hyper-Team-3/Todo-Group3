@@ -46,7 +46,7 @@ const Auth = () => {
       `${import.meta.env.VITE_SERVERURL}/${endpoint}`,
       {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", "authorization": `Bearer ${cookies.AuthToken}`},
         body: JSON.stringify({ email, password }),
       }
     );

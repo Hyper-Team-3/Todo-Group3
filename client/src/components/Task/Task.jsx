@@ -29,7 +29,7 @@ return () => clearTimeout(timeout);
         `${import.meta.env.VITE_SERVERURL}/todos/${id}`,
         {
           method: "PUT",
-          headers: { "Content-Type": "application/json" },
+          headers: { "Content-Type": "application/json", "authorization": `Bearer ${cookies.AuthToken}` },
           body: JSON.stringify({
             id: id,
             user_email: cookies.Email,
@@ -55,6 +55,7 @@ return () => clearTimeout(timeout);
         `${import.meta.env.VITE_SERVERURL}/todos/${id}`,
         {
           method: "DELETE",
+          headers: { "authorization": `Bearer ${cookies.AuthToken}` },
         }
       );
       if (response.status === 200) {

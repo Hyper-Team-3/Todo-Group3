@@ -16,8 +16,13 @@ function App() {
   async function getData() {
     try {
       const response = await fetch(
-        `${import.meta.env.VITE_SERVERURL}/todos/${userEmail}`
-      );
+        `${import.meta.env.VITE_SERVERURL}/todos/${userEmail}`, {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json", "authorization": `Bearer ${cookies.AuthToken}`
+          }
+        }
+      )
       const json = await response.json();
       setTasks(json);
     } catch (err) {

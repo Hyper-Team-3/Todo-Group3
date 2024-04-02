@@ -2,6 +2,30 @@ const express = require("express");
 const { v4: uuidv4 } = require("uuid"); // creates unique ids for the todos
 const router = express.Router();
 const pool = require("../db");
+const jwt = require("jsonwebtoken");
+
+const authMiddleware = (req, res, next) => {
+  const authHeader = req.headers["authorization"];
+  const token = authHeader && authHeader.split(" ")[1];
+
+  if (!token) {
+    return res.status(401).json({ detail: "Token not present" });
+  }
+  jwt.verify(token, process.env.JWT_SECRET, (err, decodedToken) => {
+    if (err) {
+      return res.status(403).json({ detail: "Invalid or expired token" });
+    } else {
+      const { email } = decodedToken;
+      if (!email) {
+        return res.status(401).json({ detail: "Unauthorized" });
+      }
+      req.email = email;
+      
+      next();
+    }
+  });
+};
+
 
 /**
  * @swagger
@@ -57,7 +81,7 @@ const pool = require("../db");
  *                 $ref: '#/components/schemas/Todo'
  */
 
-router.get("/:userEmail", async (req, res) => {
+router.get("/:userEmail", authMiddleware, async (req, res) => {
   const { userEmail } = req.params;
 
   try {
@@ -95,7 +119,7 @@ router.get("/:userEmail", async (req, res) => {
  *               $ref: '#/components/schemas/Todo'
  */
 
-router.post("/", async (req, res) => {
+router.post("/", authMiddleware, async (req, res) => {
   try {
     const { user_email, title, progress, date, completed } = req.body;
     console.log(user_email, title, progress, date, completed);
@@ -141,7 +165,7 @@ router.post("/", async (req, res) => {
  *               $ref: '#/components/schemas/Todo'
  */
 
-router.put("/:id", async (req, res) => {
+router.put("/:id", authMiddleware, async (req, res) => {
   const { id } = req.params;
   const { user_email, title, progress, date, completed } = req.body;
   try {
@@ -180,7 +204,7 @@ router.put("/:id", async (req, res) => {
  *               type: object
  */
 
-router.delete("/:id", async (req, res) => {
+router.delete("/:id", authMiddleware, async (req, res) => {
   const { id } = req.params;
   try {
     const deleteTodo = await pool.query("DELETE FROM todos WHERE id = $1;", [

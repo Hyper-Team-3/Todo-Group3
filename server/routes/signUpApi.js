@@ -13,7 +13,7 @@ router.post('/', async (req, res) => {
 
   try {
     const signup = await pool.query(`INSERT INTO users (email, hashed_password) VALUES($1, $2)`, [email, hashedPassword])
-    const token = jwt.sign({email}, 'secret', {expiresIn: '1hr'})
+    const token = jwt.sign({email}, process.env.JWT_SECRET, {expiresIn: '1hr'})
     res.json({email, token})
 
   } catch (err) {
