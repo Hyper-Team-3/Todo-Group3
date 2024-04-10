@@ -78,7 +78,7 @@ return () => clearTimeout(timeout);
   };
 
   return (
-    <div className={`${darkMode ? styles.parentDarkM : styles.parent} ${transition}`}>
+    <div className={`m-6 rounded-lg flex justify-between pr-8 transition-all duration-500 ease-in-out ${darkMode ? "bg-[#3a3a3a] text-white" : "bg-gray-200 text-gray-500 "}`}>
       <div className={`row-span-2 border-l-8 ${colors()} rounded-l`}></div>
       <div className={styles.content}>
         <div className={styles.info}>

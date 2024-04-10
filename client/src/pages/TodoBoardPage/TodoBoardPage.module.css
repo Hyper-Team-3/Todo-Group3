@@ -1,7 +1,0 @@
-.bg {
-    @apply lg:grid lg:grid-cols-[13] lg:grid-rows-6 lg:auto-cols-fr lg:bg-gray-200 lg:overflow-hidden lg:h-screen transition-colors duration-500
-}
-
-.darkModebg {
-    @apply lg:grid lg:grid-cols-[13] lg:grid-rows-6 lg:auto-cols-fr lg:bg-gray-800 lg:overflow-hidden lg:h-screen transition-colors duration-500
-}

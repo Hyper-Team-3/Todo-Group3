@@ -8,7 +8,6 @@ const pool = require("../db");
 
 router.post('/', async (req, res) => {
   const { email, password } = req.body
-  console.log(email, password, "req.body")
 
   try {
     const users = await pool.query('SELECT * FROM users WHERE email = $1', [email])
