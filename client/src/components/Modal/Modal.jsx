@@ -87,7 +87,7 @@ const Modal = ({ mode, setShowModal, getData, task }) => {
       <div className={darkMode ? styles.modalwindowDarkM : styles.modalwindow}>
         <div className="flex justify-between">
           <h3>Let's {mode} your task</h3>
-          <button onClick={() => setShowModal(false)}>x</button>
+          <button className="text-red-500" onClick={() => setShowModal(false)}>CLOSE</button>
         </div>
         <form className="flex flex-col gap-4">
           <input

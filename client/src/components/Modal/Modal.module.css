@@ -11,7 +11,7 @@
 }
 
 .modalwindowDarkM {
-    @apply absolute md:w-[50vw] w-[95vw] max-w-[50rem] bg-gray-900 p-[2.5rem] rounded-[10px] shadow-lg
+    @apply absolute md:w-[50vw] w-[95vw] max-w-[50rem] bg-[#1F1F1F] p-[2.5rem] rounded-[10px] shadow-lg text-white
 }
 
 .submit {

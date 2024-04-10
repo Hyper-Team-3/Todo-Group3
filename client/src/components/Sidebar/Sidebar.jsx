@@ -24,7 +24,7 @@ const Sidebar = () => {
         <button className={"rounded-full bg-[#6a25b8] px-4 py-1 text-white text-[0.8rem]"} onClick={SignOut}>Sign Out</button>
       </div>
       <div className="text-white md:hidden">
-        <button onClick={() => setShowMobileMenu(true)}>Menu</button>
+        <button onClick={() => setShowMobileMenu(true)}>MENU</button>
       </div>
 
       {showMobileMenu && (

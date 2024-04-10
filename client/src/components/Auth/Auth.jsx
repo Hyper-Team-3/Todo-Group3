@@ -72,12 +72,12 @@ const Auth = () => {
   );
 
   return (
-    <div className="bg-[#0f061c] flex items-center justify-center h-lvh">
+    <div className="bg-[#0f061c] flex items-center justify-center h-dvh">
       <div
         className="lg:w-[50%] md:w-[80%] w-lvw max-w-[50rem] shadow-lg grid grid-cols-1 md:grid-cols-[100px_1fr]"
       >
-        <div className="bg-[#1f0045] w-[100%] h-[100%] hidden md:flex md:items-center ">
-        <h1 className={`text-[3rem] font-semibold font-poppins text-white rotate-[-90deg]`}>TICK<span className="text-[#1cacb4] text-[3rem]">.</span></h1>
+        <div className="bg-[#1f0045] w-[100%] h-[100%]  md:flex md:items-center text-center">
+        <h1 className={`text-[3rem] font-semibold font-poppins text-white md:rotate-[-90deg]`}>TICK<span className="text-[#1cacb4] text-[3rem]">.</span></h1>
         </div>
        
         <div className="flex flex-col justify-center py-[5rem] px-[2rem] bg-white h-[35rem]">
