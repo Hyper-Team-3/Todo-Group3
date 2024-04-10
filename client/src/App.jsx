@@ -8,7 +8,6 @@ export const ThemeContext = createContext();
 function App() {
   const [darkMode, setDarkMode] = useState();
   const [tasks, setTasks] = useState(null);
-  // eslint-disable-next-line no-unused-vars
   const [cookies, setCookie, removeCookie] = useCookies(null);
   const userEmail = cookies.Email;
   const authToken = cookies.AuthToken;
@@ -35,7 +34,6 @@ function App() {
       getData();
     }
   }, []);
-  // eslint-disable-next-line react-hooks/exhaustive-deps
 
   function toggleMode() {
     setDarkMode(prevDarkMode => !prevDarkMode);
@@ -60,7 +58,7 @@ function App() {
   return (
     <>
       <ThemeContext.Provider
-        value={{ darkMode, toggleMode, userEmail, tasks, getData }}
+        value={{ darkMode, setDarkMode, toggleMode, userEmail, tasks, getData }}
       >
         {!authToken && <Auth />}
         {authToken && <TodoBoard />}

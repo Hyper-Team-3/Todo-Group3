@@ -1,34 +1,24 @@
 import { useContext } from "react";
 import { ThemeContext } from "../../App";
-import styles from "./Header.module.css";
 import { useCookies } from 'react-cookie';
+import SliderToggle from "../ToggleDark";
 
 const Header = () => {
   const { darkMode } = useContext(ThemeContext);
   const [cookies, setCookie, removeCookie] = useCookies(['Email']);
 
   const userEmail = cookies.Email || ''; 
-
-  function SignOut() {
-    console.log('sign out');
-    removeCookie('Email');
-    removeCookie('AuthToken');
-    window.location.reload();
-  }
   
   return (
-    <header className={darkMode ? styles.headerDarkM : styles.header}>
-      <h1 className={darkMode ? styles.titleDarkM : styles.title}>
-        Welcome Back!
-      </h1>
+    <header className={`flex justify-between items-center px-6 py-6  shadow-lg transition-colors duration-500 ${darkMode ? "bg-[#1f1f1f]" : "bg-[#fff]" }`}>
       
-      <div className={styles.profilewrapper}>
-        <p className={darkMode ? styles.nameDarkM : styles.name}>
-          {userEmail ? userEmail : 'Guest'}
-        </p>
-        <button className={styles.signout} onClick={SignOut}>Sign Out</button>
-      </div>
-    </header>
+    <p className={`text-[1rem] font-bold ${darkMode ? "text-white" : "text-black"}`}>
+      {userEmail ? userEmail : 'Guest'}
+    </p>
+  <div className="border-l-[1px] border-l-[#8d8d8d] pl-4">
+  <SliderToggle />
+  </div>
+</header>
   );
 };
 

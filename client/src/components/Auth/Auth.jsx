@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useCookies } from "react-cookie";
 import "./Auth.css";
-import hello from "../../assets/hello.png";
+import AnimatedText from "../AnimatedText";
 
 const Auth = () => {
   const [cookies, setCookie, removeCookie] = useCookies(null);
@@ -72,25 +72,28 @@ const Auth = () => {
   );
 
   return (
-    <div className="create-account flex items-center justify-center">
+    <div className="bg-[#0f061c] flex items-center justify-center h-lvh">
       <div
-        className="auth-container-wrapper
-         p-0 shadow-lg flex"
+        className="lg:w-[50%] md:w-[80%] w-lvw max-w-[50rem] shadow-lg grid grid-cols-1 md:grid-cols-[100px_1fr]"
       >
-        <img className="bg-image" src={hello}></img>
-        <div className="auth-container-box">
-          <h2 className="join-text">
-            {isLogin ? "Welcome Back!" : "Please sign up!"}
+        <div className="bg-[#1f0045] w-[100%] h-[100%] hidden md:flex md:items-center ">
+        <h1 className={`text-[3rem] font-semibold font-poppins text-white rotate-[-90deg]`}>TICK<span className="text-[#1cacb4] text-[3rem]">.</span></h1>
+        </div>
+       
+        <div className="flex flex-col justify-center py-[5rem] px-[2rem] bg-white h-[35rem]">
+          <h2 className="text-[2rem] font-bold">
+            {isLogin ? 
+            <AnimatedText text={"Welcome Back!"} delay={100} />: "Sign Up! 🎉"}
           </h2>
           {isLogin && (
             <p className="p-text">
               Let's pick up where you left off and continue organizing your
-              tasks effectively!
+              tasks effectively.
             </p>
           )}
           {!isLogin && (
             <p className="p-text">
-              Join us and start organizing your tasks effectively!
+              Join us and start organizing your tasks effectively.
             </p>
           )}
           <form

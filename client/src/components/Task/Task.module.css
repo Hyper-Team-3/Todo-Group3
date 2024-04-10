@@ -18,7 +18,7 @@
 }
 
 .parentDarkM {
-  @apply bg-gray-800 m-6 rounded-lg flex justify-between pr-8 text-white transition-all duration-500 ease-in-out;
+  @apply bg-[#252525] m-6 rounded-lg flex justify-between pr-8 text-white transition-all duration-500 ease-in-out;
 }
 
 .opacity0 {
